@@ -12,7 +12,6 @@
   </property>
   <property name="font">
    <font>
-    
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -48,7 +47,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="lineEdit_Name">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -85,7 +84,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2">
+         <widget class="QLineEdit" name="lineEdit_Email">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -122,7 +121,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_3">
+         <widget class="QLineEdit" name="lineEdit_Cellphone">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -153,14 +152,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_Cancel">
        <property name="text">
         <string>取 消</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_Save">
        <property name="text">
         <string>保 存</string>
        </property>

@@ -12,7 +12,6 @@
   </property>
   <property name="font">
    <font>
-    
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -48,7 +47,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="lineEdit_Name">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -74,7 +73,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_4">
+         <widget class="QLineEdit" name="lineEdit_Short_name">
           <property name="maximumSize">
            <size>
             <width>120</width>
@@ -104,7 +103,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_6"/>
+         <widget class="QLineEdit" name="lineEdit_Address"/>
         </item>
        </layout>
       </item>
@@ -127,7 +126,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_7"/>
+         <widget class="QLineEdit" name="lineEdit_Telephone"/>
         </item>
         <item>
          <widget class="QLabel" name="label_3">
@@ -157,7 +156,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_3"/>
+         <widget class="QLineEdit" name="lineEdit_Contact"/>
         </item>
         <item>
          <widget class="QLabel" name="label_6">
@@ -176,7 +175,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_2"/>
+         <widget class="QLineEdit" name="lineEdit_Cellphone"/>
         </item>
         <item>
          <widget class="QLabel" name="label_2">
@@ -186,7 +185,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="lineEdit_Email"/>
         </item>
        </layout>
       </item>
@@ -216,7 +215,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox_5">
+         <widget class="QComboBox" name="comboBox_Employee">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -246,14 +245,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_Cancel">
        <property name="text">
         <string>取 消</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_Save">
        <property name="text">
         <string>保 存</string>
        </property>

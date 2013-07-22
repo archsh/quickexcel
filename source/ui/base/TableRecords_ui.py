@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Mon Jul 22 16:12:27 2013
+# Created: Mon Jul 22 20:23:26 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -40,9 +40,9 @@ class Ui_TableRecords(object):
         self.label_3.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_072_bookmark.png")))
         self.label_3.setObjectName(_fromUtf8("label_3"))
         self.horizontalLayout.addWidget(self.label_3)
-        self.label = QtGui.QLabel(TableRecords)
-        self.label.setObjectName(_fromUtf8("label"))
-        self.horizontalLayout.addWidget(self.label)
+        self.label_Title = QtGui.QLabel(TableRecords)
+        self.label_Title.setObjectName(_fromUtf8("label_Title"))
+        self.horizontalLayout.addWidget(self.label_Title)
         self.pushButton_Filter = QtGui.QPushButton(TableRecords)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_027_search.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -104,7 +104,7 @@ class Ui_TableRecords(object):
 
     def retranslateUi(self, TableRecords):
         TableRecords.setWindowTitle(_translate("TableRecords", "TableRecords", None))
-        self.label.setText(_translate("TableRecords", "发货记录", None))
+        self.label_Title.setText(_translate("TableRecords", "发货记录", None))
         self.pushButton_Filter.setText(_translate("TableRecords", "筛选", None))
         self.pushButton_Delete.setText(_translate("TableRecords", "删除", None))
         self.pushButton_Modify.setText(_translate("TableRecords", "修改", None))

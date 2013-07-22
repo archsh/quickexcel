@@ -12,7 +12,6 @@
   </property>
   <property name="font">
    <font>
-    
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -48,7 +47,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QLineEdit" name="lineEdit_SN">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -74,7 +73,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox_3">
+         <widget class="QComboBox" name="comboBox_Customer">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -106,7 +105,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox_4">
+         <widget class="QComboBox" name="comboBox_Product">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -142,7 +141,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="doubleSpinBox">
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_Price">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -171,7 +170,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+         <widget class="QDoubleSpinBox" name="doubleSpinBox_Amount">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -200,7 +199,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QDateEdit" name="dateEdit_2">
+         <widget class="QDateEdit" name="dateEdit_Date">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -327,14 +326,14 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pushButton_Cancel">
        <property name="text">
         <string>取 消</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_Save">
        <property name="text">
         <string>保 存</string>
        </property>
