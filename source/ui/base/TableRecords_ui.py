@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Mon Jul 22 20:23:26 2013
+# Created: Mon Jul 22 23:08:08 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -65,6 +65,7 @@ class Ui_TableRecords(object):
         self.horizontalLayout_2.addWidget(self.pushButton_LastPage)
         self.lineEdit_Page = QtGui.QLineEdit(TableRecords)
         self.lineEdit_Page.setMaximumSize(QtCore.QSize(60, 16777215))
+        self.lineEdit_Page.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_Page.setObjectName(_fromUtf8("lineEdit_Page"))
         self.horizontalLayout_2.addWidget(self.lineEdit_Page)
         self.pushButton_NextPage = QtGui.QPushButton(TableRecords)

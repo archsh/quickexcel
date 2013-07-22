@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormEmployee.ui'
 #
-# Created: Mon Jul 22 16:12:27 2013
+# Created: Mon Jul 22 23:08:08 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,10 +44,10 @@ class Ui_FormEmployee(object):
         self.label_9.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_9.setObjectName(_fromUtf8("label_9"))
         self.horizontalLayout.addWidget(self.label_9)
-        self.lineEdit = QtGui.QLineEdit(self.groupBox)
-        self.lineEdit.setMinimumSize(QtCore.QSize(120, 0))
-        self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
-        self.horizontalLayout.addWidget(self.lineEdit)
+        self.lineEdit_Name = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit_Name.setMinimumSize(QtCore.QSize(120, 0))
+        self.lineEdit_Name.setObjectName(_fromUtf8("lineEdit_Name"))
+        self.horizontalLayout.addWidget(self.lineEdit_Name)
         self.label_3 = QtGui.QLabel(self.groupBox)
         self.label_3.setText(_fromUtf8(""))
         self.label_3.setObjectName(_fromUtf8("label_3"))
@@ -61,10 +61,10 @@ class Ui_FormEmployee(object):
         self.label_4.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_4.setObjectName(_fromUtf8("label_4"))
         self.horizontalLayout_3.addWidget(self.label_4)
-        self.lineEdit_2 = QtGui.QLineEdit(self.groupBox)
-        self.lineEdit_2.setMinimumSize(QtCore.QSize(120, 0))
-        self.lineEdit_2.setObjectName(_fromUtf8("lineEdit_2"))
-        self.horizontalLayout_3.addWidget(self.lineEdit_2)
+        self.lineEdit_Email = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit_Email.setMinimumSize(QtCore.QSize(120, 0))
+        self.lineEdit_Email.setObjectName(_fromUtf8("lineEdit_Email"))
+        self.horizontalLayout_3.addWidget(self.lineEdit_Email)
         self.label_2 = QtGui.QLabel(self.groupBox)
         self.label_2.setText(_fromUtf8(""))
         self.label_2.setObjectName(_fromUtf8("label_2"))
@@ -78,10 +78,10 @@ class Ui_FormEmployee(object):
         self.label_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.horizontalLayout_2.addWidget(self.label_5)
-        self.lineEdit_3 = QtGui.QLineEdit(self.groupBox)
-        self.lineEdit_3.setMinimumSize(QtCore.QSize(120, 0))
-        self.lineEdit_3.setObjectName(_fromUtf8("lineEdit_3"))
-        self.horizontalLayout_2.addWidget(self.lineEdit_3)
+        self.lineEdit_Cellphone = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit_Cellphone.setMinimumSize(QtCore.QSize(120, 0))
+        self.lineEdit_Cellphone.setObjectName(_fromUtf8("lineEdit_Cellphone"))
+        self.horizontalLayout_2.addWidget(self.lineEdit_Cellphone)
         self.label = QtGui.QLabel(self.groupBox)
         self.label.setText(_fromUtf8(""))
         self.label.setObjectName(_fromUtf8("label"))
@@ -95,12 +95,12 @@ class Ui_FormEmployee(object):
         self.label_10.setText(_fromUtf8(""))
         self.label_10.setObjectName(_fromUtf8("label_10"))
         self.horizontalLayout_4.addWidget(self.label_10)
-        self.pushButton_2 = QtGui.QPushButton(FormEmployee)
-        self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
-        self.horizontalLayout_4.addWidget(self.pushButton_2)
-        self.pushButton = QtGui.QPushButton(FormEmployee)
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        self.horizontalLayout_4.addWidget(self.pushButton)
+        self.pushButton_Cancel = QtGui.QPushButton(FormEmployee)
+        self.pushButton_Cancel.setObjectName(_fromUtf8("pushButton_Cancel"))
+        self.horizontalLayout_4.addWidget(self.pushButton_Cancel)
+        self.pushButton_Save = QtGui.QPushButton(FormEmployee)
+        self.pushButton_Save.setObjectName(_fromUtf8("pushButton_Save"))
+        self.horizontalLayout_4.addWidget(self.pushButton_Save)
         self.horizontalLayout_4.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
@@ -113,6 +113,6 @@ class Ui_FormEmployee(object):
         self.label_9.setText(_translate("FormEmployee", "姓名：", None))
         self.label_4.setText(_translate("FormEmployee", "邮件：", None))
         self.label_5.setText(_translate("FormEmployee", "电话：", None))
-        self.pushButton_2.setText(_translate("FormEmployee", "取 消", None))
-        self.pushButton.setText(_translate("FormEmployee", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormEmployee", "取 消", None))
+        self.pushButton_Save.setText(_translate("FormEmployee", "保 存", None))
 

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormReceipt.ui'
 #
-# Created: Mon Jul 22 20:23:25 2013
+# Created: Mon Jul 22 23:08:08 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -133,12 +133,12 @@ class Ui_FormReceipt(object):
         self.label_10.setText(_fromUtf8(""))
         self.label_10.setObjectName(_fromUtf8("label_10"))
         self.horizontalLayout_4.addWidget(self.label_10)
-        self.pushButton_2 = QtGui.QPushButton(FormReceipt)
-        self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
-        self.horizontalLayout_4.addWidget(self.pushButton_2)
-        self.pushButton = QtGui.QPushButton(FormReceipt)
-        self.pushButton.setObjectName(_fromUtf8("pushButton"))
-        self.horizontalLayout_4.addWidget(self.pushButton)
+        self.pushButton_Cancel = QtGui.QPushButton(FormReceipt)
+        self.pushButton_Cancel.setObjectName(_fromUtf8("pushButton_Cancel"))
+        self.horizontalLayout_4.addWidget(self.pushButton_Cancel)
+        self.pushButton_Save = QtGui.QPushButton(FormReceipt)
+        self.pushButton_Save.setObjectName(_fromUtf8("pushButton_Save"))
+        self.horizontalLayout_4.addWidget(self.pushButton_Save)
         self.horizontalLayout_4.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
@@ -155,6 +155,6 @@ class Ui_FormReceipt(object):
         self.label_8.setText(_translate("FormReceipt", "入/出账账号：", None))
         self.label_11.setText(_translate("FormReceipt", "收/付款人：", None))
         self.label_13.setText(_translate("FormReceipt", "记 录：", None))
-        self.pushButton_2.setText(_translate("FormReceipt", "取 消", None))
-        self.pushButton.setText(_translate("FormReceipt", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormReceipt", "取 消", None))
+        self.pushButton_Save.setText(_translate("FormReceipt", "保 存", None))
 
