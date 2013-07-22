@@ -35,22 +35,13 @@ class Employee(Base):
     __tablename__ = 'employees'
     id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
     name       = Column(String(128))
-    short_name = Column(String(50))
-    address    = Column(String(128))
-    contact    = Column(String(24))
-    telephone  = Column(String(24))
     cellphone  = Column(String(24))
     email      = Column(String(50))
     comment    = Column(String(256))
 
-    def __init__(self, name, short_name, address=None, email=None,
-                 contact=None,telephone=None,cellphone=None, comment=None):
+    def __init__(self, name, email=None,cellphone=None, comment=None):
         self.name = name
-        self.short_name = short_name
-        self.contact = contact
-        self.address = address
         self.email=email
-        self.telephone = telephone
         self.cellphone = cellphone
         self.comment = comment
 
@@ -60,24 +51,20 @@ class Employee(Base):
 class Product(Base):
     __tablename__ = 'products'
     id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    name       = Column(String(128))
-    short_name = Column(String(50))
-    address    = Column(String(128))
-    contact    = Column(String(24))
-    telephone  = Column(String(24))
-    cellphone  = Column(String(24))
-    email      = Column(String(50))
+    sn         = Column(String(128))
+    name_major = Column(String(50))
+    name_minor = Column(String(128))
+    name_ext   = Column(String(24))
+    price      = Column(String(24))
     comment    = Column(String(256))
 
-    def __init__(self, name, short_name, address=None, email=None,
-                 contact=None,telephone=None,cellphone=None, comment=None):
-        self.name = name
-        self.short_name = short_name
-        self.contact = contact
-        self.address = address
-        self.email=email
-        self.telephone = telephone
-        self.cellphone = cellphone
+    def __init__(self, sn, name_major, name_minor=None, name_ext=None,
+                 price=None, comment=None):
+        self.sn = sn
+        self.name_major = name_major
+        self.name_minor = name_minor
+        self.name_ext = name_ext
+        self.price=price
         self.comment = comment
 
     def __repr__(self):
@@ -87,13 +74,14 @@ class Product(Base):
 class Delivery(Base):
     __tablename__ = 'deliveries'
     id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    name       = Column(String(128))
-    short_name = Column(String(50))
-    address    = Column(String(128))
-    contact    = Column(String(24))
-    telephone  = Column(String(24))
-    cellphone  = Column(String(24))
-    email      = Column(String(50))
+    sn         = Column(String(128))
+    customer   = Column(String(50))
+    model      = Column(String(50))
+    num        = Column(String(128))
+    price      = Column(String(24))
+    amount     = Column(String(24))
+    employee   = Column(String(24))
+    dlv_date   = Column(String(50))
     comment    = Column(String(256))
 
     def __init__(self, name, short_name, address=None, email=None,
@@ -135,4 +123,18 @@ class Receipt(Base):
 
     def __repr__(self):
         return "<Receipt('%s')>" % self.name
+
+def setup_db_session(dbpath):
+    pass
+
+def db_validate():
+    pass
+
+
+def initialize_db():
+    pass
+
+
+
+Base.metadata.create_all(engine)
 

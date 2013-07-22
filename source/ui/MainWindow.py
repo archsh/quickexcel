@@ -34,6 +34,17 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         QtCore.QObject.connect(self.action_Restore, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_Restore)
         QtCore.QObject.connect(self.action_Return, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_Return)
     
+    def load_Config(self):
+        pass
+    
+    def do_Init(self):
+        pass
+    
+    
+    def do_Configure(self):
+        pass
+    
+    
     def do_About(self):
         pass
     
