@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormCustomer.ui'
 #
-# Created: Mon Jul 22 15:46:10 2013
+# Created: Mon Jul 22 16:12:27 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,17 +23,17 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(658, 239)
+class Ui_FormCustomer(object):
+    def setupUi(self, FormCustomer):
+        FormCustomer.setObjectName(_fromUtf8("FormCustomer"))
+        FormCustomer.resize(658, 239)
         font = QtGui.QFont()
         font.setPointSize(10)
-        Form.setFont(font)
-        self.verticalLayout_2 = QtGui.QVBoxLayout(Form)
+        FormCustomer.setFont(font)
+        self.verticalLayout_2 = QtGui.QVBoxLayout(FormCustomer)
         self.verticalLayout_2.setMargin(3)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.groupBox = QtGui.QGroupBox(Form)
+        self.groupBox = QtGui.QGroupBox(FormCustomer)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
@@ -132,33 +132,33 @@ class Ui_Form(object):
         self.verticalLayout_2.addWidget(self.groupBox)
         self.horizontalLayout_4 = QtGui.QHBoxLayout()
         self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
-        self.label_10 = QtGui.QLabel(Form)
+        self.label_10 = QtGui.QLabel(FormCustomer)
         self.label_10.setText(_fromUtf8(""))
         self.label_10.setObjectName(_fromUtf8("label_10"))
         self.horizontalLayout_4.addWidget(self.label_10)
-        self.pushButton_2 = QtGui.QPushButton(Form)
+        self.pushButton_2 = QtGui.QPushButton(FormCustomer)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.horizontalLayout_4.addWidget(self.pushButton_2)
-        self.pushButton = QtGui.QPushButton(Form)
+        self.pushButton = QtGui.QPushButton(FormCustomer)
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.horizontalLayout_4.addWidget(self.pushButton)
         self.horizontalLayout_4.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(FormCustomer)
+        QtCore.QMetaObject.connectSlotsByName(FormCustomer)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.groupBox.setTitle(_translate("Form", "客户资料：", None))
-        self.label_9.setText(_translate("Form", "客户名称：", None))
-        self.label_4.setText(_translate("Form", "简称：", None))
-        self.label_8.setText(_translate("Form", "地址：", None))
-        self.label_12.setText(_translate("Form", "电话：", None))
-        self.label_7.setText(_translate("Form", "联系人：", None))
-        self.label_6.setText(_translate("Form", "手机：", None))
-        self.label_2.setText(_translate("Form", "邮件：", None))
-        self.label_11.setText(_translate("Form", "业务员：", None))
-        self.pushButton_2.setText(_translate("Form", "取 消", None))
-        self.pushButton.setText(_translate("Form", "保 存", None))
+    def retranslateUi(self, FormCustomer):
+        FormCustomer.setWindowTitle(_translate("FormCustomer", "FormCustomer", None))
+        self.groupBox.setTitle(_translate("FormCustomer", "客户资料：", None))
+        self.label_9.setText(_translate("FormCustomer", "客户名称：", None))
+        self.label_4.setText(_translate("FormCustomer", "简称：", None))
+        self.label_8.setText(_translate("FormCustomer", "地址：", None))
+        self.label_12.setText(_translate("FormCustomer", "电话：", None))
+        self.label_7.setText(_translate("FormCustomer", "联系人：", None))
+        self.label_6.setText(_translate("FormCustomer", "手机：", None))
+        self.label_2.setText(_translate("FormCustomer", "邮件：", None))
+        self.label_11.setText(_translate("FormCustomer", "业务员：", None))
+        self.pushButton_2.setText(_translate("FormCustomer", "取 消", None))
+        self.pushButton.setText(_translate("FormCustomer", "保 存", None))
 

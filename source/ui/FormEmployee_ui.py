@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormEmployee.ui'
 #
-# Created: Mon Jul 22 15:46:10 2013
+# Created: Mon Jul 22 16:12:27 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,17 +23,17 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(277, 173)
+class Ui_FormEmployee(object):
+    def setupUi(self, FormEmployee):
+        FormEmployee.setObjectName(_fromUtf8("FormEmployee"))
+        FormEmployee.resize(277, 173)
         font = QtGui.QFont()
         font.setPointSize(10)
-        Form.setFont(font)
-        self.verticalLayout_2 = QtGui.QVBoxLayout(Form)
+        FormEmployee.setFont(font)
+        self.verticalLayout_2 = QtGui.QVBoxLayout(FormEmployee)
         self.verticalLayout_2.setMargin(3)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.groupBox = QtGui.QGroupBox(Form)
+        self.groupBox = QtGui.QGroupBox(FormEmployee)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
@@ -91,28 +91,28 @@ class Ui_Form(object):
         self.verticalLayout_2.addWidget(self.groupBox)
         self.horizontalLayout_4 = QtGui.QHBoxLayout()
         self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
-        self.label_10 = QtGui.QLabel(Form)
+        self.label_10 = QtGui.QLabel(FormEmployee)
         self.label_10.setText(_fromUtf8(""))
         self.label_10.setObjectName(_fromUtf8("label_10"))
         self.horizontalLayout_4.addWidget(self.label_10)
-        self.pushButton_2 = QtGui.QPushButton(Form)
+        self.pushButton_2 = QtGui.QPushButton(FormEmployee)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.horizontalLayout_4.addWidget(self.pushButton_2)
-        self.pushButton = QtGui.QPushButton(Form)
+        self.pushButton = QtGui.QPushButton(FormEmployee)
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.horizontalLayout_4.addWidget(self.pushButton)
         self.horizontalLayout_4.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(FormEmployee)
+        QtCore.QMetaObject.connectSlotsByName(FormEmployee)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.groupBox.setTitle(_translate("Form", "业务信息：", None))
-        self.label_9.setText(_translate("Form", "姓名：", None))
-        self.label_4.setText(_translate("Form", "邮件：", None))
-        self.label_5.setText(_translate("Form", "电话：", None))
-        self.pushButton_2.setText(_translate("Form", "取 消", None))
-        self.pushButton.setText(_translate("Form", "保 存", None))
+    def retranslateUi(self, FormEmployee):
+        FormEmployee.setWindowTitle(_translate("FormEmployee", "FormEmployee", None))
+        self.groupBox.setTitle(_translate("FormEmployee", "业务信息：", None))
+        self.label_9.setText(_translate("FormEmployee", "姓名：", None))
+        self.label_4.setText(_translate("FormEmployee", "邮件：", None))
+        self.label_5.setText(_translate("FormEmployee", "电话：", None))
+        self.pushButton_2.setText(_translate("FormEmployee", "取 消", None))
+        self.pushButton.setText(_translate("FormEmployee", "保 存", None))
 

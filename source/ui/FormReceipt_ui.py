@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormReceipt.ui'
 #
-# Created: Mon Jul 22 15:46:10 2013
+# Created: Mon Jul 22 16:12:27 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,17 +23,17 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(658, 173)
+class Ui_FormReceipt(object):
+    def setupUi(self, FormReceipt):
+        FormReceipt.setObjectName(_fromUtf8("FormReceipt"))
+        FormReceipt.resize(658, 173)
         font = QtGui.QFont()
         font.setPointSize(10)
-        Form.setFont(font)
-        self.verticalLayout_2 = QtGui.QVBoxLayout(Form)
+        FormReceipt.setFont(font)
+        self.verticalLayout_2 = QtGui.QVBoxLayout(FormReceipt)
         self.verticalLayout_2.setMargin(3)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
-        self.groupBox = QtGui.QGroupBox(Form)
+        self.groupBox = QtGui.QGroupBox(FormReceipt)
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
@@ -138,33 +138,33 @@ class Ui_Form(object):
         self.verticalLayout_2.addWidget(self.groupBox)
         self.horizontalLayout_4 = QtGui.QHBoxLayout()
         self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
-        self.label_10 = QtGui.QLabel(Form)
+        self.label_10 = QtGui.QLabel(FormReceipt)
         self.label_10.setText(_fromUtf8(""))
         self.label_10.setObjectName(_fromUtf8("label_10"))
         self.horizontalLayout_4.addWidget(self.label_10)
-        self.pushButton_2 = QtGui.QPushButton(Form)
+        self.pushButton_2 = QtGui.QPushButton(FormReceipt)
         self.pushButton_2.setObjectName(_fromUtf8("pushButton_2"))
         self.horizontalLayout_4.addWidget(self.pushButton_2)
-        self.pushButton = QtGui.QPushButton(Form)
+        self.pushButton = QtGui.QPushButton(FormReceipt)
         self.pushButton.setObjectName(_fromUtf8("pushButton"))
         self.horizontalLayout_4.addWidget(self.pushButton)
         self.horizontalLayout_4.setStretch(0, 1)
         self.verticalLayout_2.addLayout(self.horizontalLayout_4)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(FormReceipt)
+        QtCore.QMetaObject.connectSlotsByName(FormReceipt)
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(_translate("Form", "Form", None))
-        self.groupBox.setTitle(_translate("Form", "收款记录/退款记录", None))
-        self.label_9.setText(_translate("Form", "发货单号：", None))
-        self.label_5.setText(_translate("Form", "客 户：", None))
-        self.label_4.setText(_translate("Form", "发货单：", None))
-        self.label_7.setText(_translate("Form", "金 额：", None))
-        self.label_6.setText(_translate("Form", "日 期：", None))
-        self.label_8.setText(_translate("Form", "入/出账账号：", None))
-        self.label_11.setText(_translate("Form", "收/付款人：", None))
-        self.label_13.setText(_translate("Form", "记 录：", None))
-        self.pushButton_2.setText(_translate("Form", "取 消", None))
-        self.pushButton.setText(_translate("Form", "保 存", None))
+    def retranslateUi(self, FormReceipt):
+        FormReceipt.setWindowTitle(_translate("FormReceipt", "FormReceipt", None))
+        self.groupBox.setTitle(_translate("FormReceipt", "收款记录/退款记录", None))
+        self.label_9.setText(_translate("FormReceipt", "发货单号：", None))
+        self.label_5.setText(_translate("FormReceipt", "客 户：", None))
+        self.label_4.setText(_translate("FormReceipt", "发货单：", None))
+        self.label_7.setText(_translate("FormReceipt", "金 额：", None))
+        self.label_6.setText(_translate("FormReceipt", "日 期：", None))
+        self.label_8.setText(_translate("FormReceipt", "入/出账账号：", None))
+        self.label_11.setText(_translate("FormReceipt", "收/付款人：", None))
+        self.label_13.setText(_translate("FormReceipt", "记 录：", None))
+        self.pushButton_2.setText(_translate("FormReceipt", "取 消", None))
+        self.pushButton.setText(_translate("FormReceipt", "保 存", None))
 
