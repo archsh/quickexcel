@@ -11,7 +11,7 @@ UI_REMADE := $(patsubst source/ui/base/%_ui.py,source/ui/%.py,$(UI_PYS))
 
 uis: $(UI_PYS) $(RC_PYS)
 
-uiremade: $(UI_REMADE)
+#uiremade: $(UI_REMADE)
 
 source/ui/%.py: source/ui/base/%_ui.py $(MAKEFILE)
 	@echo "Generating UI remaded py ..."
