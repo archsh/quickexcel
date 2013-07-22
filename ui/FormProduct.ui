@@ -12,7 +12,6 @@
   </property>
   <property name="font">
    <font>
-    
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -30,9 +29,9 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QLabel" name="label_4">
+         <widget class="QLabel" name="label_9">
           <property name="minimumSize">
            <size>
             <width>80</width>
@@ -40,7 +39,7 @@
            </size>
           </property>
           <property name="text">
-           <string>副型号：</string>
+           <string>产品编号：</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -48,18 +47,12 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox_4">
+         <widget class="QLineEdit" name="lineEdit">
           <property name="minimumSize">
            <size>
             <width>120</width>
             <height>0</height>
            </size>
-          </property>
-          <property name="editable">
-           <bool>true</bool>
-          </property>
-          <property name="duplicatesEnabled">
-           <bool>true</bool>
           </property>
          </widget>
         </item>
@@ -102,9 +95,9 @@
        </layout>
       </item>
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="label_9">
+         <widget class="QLabel" name="label_4">
           <property name="minimumSize">
            <size>
             <width>80</width>
@@ -112,7 +105,7 @@
            </size>
           </property>
           <property name="text">
-           <string>产品编号：</string>
+           <string>副型号：</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -120,12 +113,18 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QComboBox" name="comboBox_4">
           <property name="minimumSize">
            <size>
             <width>120</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="editable">
+           <bool>true</bool>
+          </property>
+          <property name="duplicatesEnabled">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

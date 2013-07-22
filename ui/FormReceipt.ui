@@ -12,7 +12,6 @@
   </property>
   <property name="font">
    <font>
-    
     <pointsize>10</pointsize>
    </font>
   </property>
@@ -32,7 +31,7 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QLabel" name="label_9">
+         <widget class="QLabel" name="label_7">
           <property name="minimumSize">
            <size>
             <width>80</width>
@@ -40,7 +39,7 @@
            </size>
           </property>
           <property name="text">
-           <string>发货单号：</string>
+           <string>金 额：</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -48,12 +47,15 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
+         <widget class="QDoubleSpinBox" name="doubleSpinBox">
           <property name="minimumSize">
            <size>
             <width>120</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
@@ -126,35 +128,6 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
-         <widget class="QLabel" name="label_7">
-          <property name="minimumSize">
-           <size>
-            <width>80</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>金 额：</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QDoubleSpinBox" name="doubleSpinBox">
-          <property name="minimumSize">
-           <size>
-            <width>120</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
          <widget class="QLabel" name="label_6">
           <property name="minimumSize">
            <size>
@@ -215,17 +188,6 @@
           </property>
          </widget>
         </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0,0,0,0">
-        <item>
-         <widget class="QLabel" name="label">
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
         <item>
          <widget class="QLabel" name="label_11">
           <property name="minimumSize">
@@ -255,6 +217,17 @@
           </property>
           <property name="duplicatesEnabled">
            <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,0,0">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string/>
           </property>
          </widget>
         </item>
