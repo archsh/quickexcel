@@ -2,6 +2,7 @@
 
 from PyQt4 import QtCore, QtGui
 from .base.MainWindow_ui import Ui_MainWindow
+from quixcel.models.base import get_db_session, setup_db_session, initialize_db
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -50,7 +51,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         
     
     def do_Init(self):
-        pass
+        setup_db_session(self.db_file)
     
     
     def do_Configure(self):
