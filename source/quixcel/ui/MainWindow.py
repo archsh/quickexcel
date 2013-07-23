@@ -39,19 +39,23 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
     
     def load_Config(self):
         import ConfigParser
-        if self.config_file:
+        if not self.config_file:
             reply = QtGui.QMessageBox.critical(self, "QMessageBox.critical()",
                     u"无效的配置文件！",
                     QtGui.QMessageBox.Abort)
             self.close()
         else:
             config = ConfigParser.ConfigParser()
-            config.read(options.configfile)
-        self.db_file = config.get('global','dbfile') if config.has_option('global','dbfile') else 'sqlite:///quickexcel.db'
+            config.read(self.config_file)
+        self.db_uri = config.get('global','db_uri') if config.has_option('global','db_uri') else 'sqlite:///quickexcel.db'
+        print 'DB URL:', self.db_uri
+        self.do_Init()
         
     
     def do_Init(self):
-        setup_db_session(self.db_file)
+        setup_db_session(self.db_uri)
+        initialize_db()
+        pass
     
     
     def do_Configure(self):

@@ -18,6 +18,10 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/icons/icons/FAX.png</normaloff>:/icons/icons/FAX.png</iconset>
+  </property>
   <property name="iconSize">
    <size>
     <width>48</width>

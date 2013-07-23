@@ -15,7 +15,7 @@ if __name__ == '__main__':
                       help="Logging File", metavar="FILE")
     (options, args) = parser.parse_args()
     app = QtGui.QApplication(sys.argv)
-    window = MainWindow(config=options.configfile)
+    window = MainWindow(config=options.configfile if options.configfile else 'quickexcel.ini')
     window.resize(1024, 680)
     window.show()
     sys.exit(app.exec_())

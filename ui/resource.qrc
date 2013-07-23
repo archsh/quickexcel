@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/FAX.png</file>
     <file>icons/glyphicons_000_glass.png</file>
     <file>icons/glyphicons_001_leaf.png</file>
     <file>icons/glyphicons_002_dog.png</file>

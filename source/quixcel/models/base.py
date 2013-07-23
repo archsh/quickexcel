@@ -1,23 +1,26 @@
 ### Base Class of Model
-
+import datetime
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
-from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy import Column, \
+            BLOB, BOOLEAN, CHAR, DATE, DATETIME, DECIMAL, FLOAT, \
+            INTEGER, NUMERIC, SMALLINT, TEXT, TIME, TIMESTAMP, \
+            VARCHAR, ForeignKey
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 class Customer(Base):
     __tablename__ = 'customers'
-    id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    name       = Column(String(128))
-    short_name = Column(String(50))
-    address    = Column(String(128))
-    contact    = Column(String(24))
-    telephone  = Column(String(24))
-    cellphone  = Column(String(24))
-    email      = Column(String(50))
-    comment    = Column(String(256))
+    id         = Column(INTEGER, primary_key=True)
+    name       = Column(VARCHAR(128),unique=True,nullable=False)
+    short_name = Column(VARCHAR(50),unique=True,nullable=False)
+    address    = Column(VARCHAR(128),nullable=False)
+    contact    = Column(VARCHAR(24),nullable=False)
+    telephone  = Column(VARCHAR(24),nullable=False)
+    cellphone  = Column(VARCHAR(24),nullable=False)
+    email      = Column(VARCHAR(50))
+    comment    = Column(VARCHAR(256))
 
     def __init__(self, name, short_name, address=None, email=None,
                  contact=None,telephone=None,cellphone=None, comment=None):
@@ -35,11 +38,11 @@ class Customer(Base):
     
 class Employee(Base):
     __tablename__ = 'employees'
-    id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    name       = Column(String(128))
-    cellphone  = Column(String(24))
-    email      = Column(String(50))
-    comment    = Column(String(256))
+    id         = Column(INTEGER, primary_key=True)
+    name       = Column(VARCHAR(24),unique=True,nullable=False)
+    cellphone  = Column(VARCHAR(24),nullable=False)
+    email      = Column(VARCHAR(50))
+    comment    = Column(VARCHAR(256))
 
     def __init__(self, name, email=None,cellphone=None, comment=None):
         self.name = name
@@ -52,13 +55,13 @@ class Employee(Base):
 
 class Product(Base):
     __tablename__ = 'products'
-    id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    sn         = Column(String(128))
-    name_major = Column(String(50))
-    name_minor = Column(String(128))
-    name_ext   = Column(String(24))
-    price      = Column(String(24))
-    comment    = Column(String(256))
+    id         = Column(INTEGER, primary_key=True)
+    sn         = Column(VARCHAR(36),unique=True)
+    name_major = Column(VARCHAR(24),nullable=False)
+    name_minor = Column(VARCHAR(12),nullable=False)
+    name_ext   = Column(VARCHAR(12))
+    price      = Column(NUMERIC(8,2),nullable=False)
+    comment    = Column(VARCHAR(256))
 
     def __init__(self, sn, name_major, name_minor=None, name_ext=None,
                  price=None, comment=None):
@@ -75,26 +78,29 @@ class Product(Base):
 
 class Delivery(Base):
     __tablename__ = 'deliveries'
-    id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    sn         = Column(String(128))
-    customer   = Column(String(50))
-    model      = Column(String(50))
-    num        = Column(String(128))
-    price      = Column(String(24))
-    amount     = Column(String(24))
-    employee   = Column(String(24))
-    dlv_date   = Column(String(50))
-    comment    = Column(String(256))
+    id         = Column(INTEGER, primary_key=True)
+    sn         = Column(VARCHAR(24),unique=True,nullable=False)
+    customer_id= Column(ForeignKey(Customer.__tablename__+'.id'),nullable=False)
+    product_id = Column(ForeignKey(Product.__tablename__+'.id'),nullable=False)
+    num        = Column(INTEGER,default=0)
+    price      = Column(NUMERIC(8,2),default=0.0)
+    amount     = Column(NUMERIC(12,2),default=0.0)
+    employee_id= Column(ForeignKey(Employee.__tablename__+'.id'))
+    dlv_date   = Column(DATE,default=datetime.datetime.now().date())
+    comment    = Column(VARCHAR(256))
+    customer = relationship("Customer", backref=backref("deliveries", order_by=id))
+    product  = relationship("Product", backref=backref("deliveries", order_by=id))
+    employee = relationship("Employee", backref=backref("deliveries", order_by=id))
 
-    def __init__(self, name, short_name, address=None, email=None,
-                 contact=None,telephone=None,cellphone=None, comment=None):
-        self.name = name
-        self.short_name = short_name
-        self.contact = contact
-        self.address = address
-        self.email=email
-        self.telephone = telephone
-        self.cellphone = cellphone
+    def __init__(self, sn, customer, product,num,price,amount,employee,dlv_date=None, comment=None):
+        self.sn = sn
+        self.customer = customer
+        self.product = product
+        self.num = num
+        self.price=price
+        self.amount = amount
+        self.employee = employee
+        self.dlv_date = dlv_date
         self.comment = comment
 
     def __repr__(self):
@@ -102,25 +108,22 @@ class Delivery(Base):
 
 class Receipt(Base):
     __tablename__ = 'receipts'
-    id         = Column(Integer, primary_key=True, sqlite_autoincrement=True)
-    name       = Column(String(128))
-    short_name = Column(String(50))
-    address    = Column(String(128))
-    contact    = Column(String(24))
-    telephone  = Column(String(24))
-    cellphone  = Column(String(24))
-    email      = Column(String(50))
-    comment    = Column(String(256))
+    id         = Column(INTEGER, primary_key=True)
+    customer_id= Column(ForeignKey(Customer.__tablename__+'.id'),nullable=False)
+    product_id = Column(ForeignKey(Product.__tablename__+'.id'),nullable=False)
+    amount     = Column(NUMERIC(12,2),default=0.0)
+    account    = Column(VARCHAR(64),nullable=False)
+    recvdate   = Column(DATE,default=datetime.datetime.now().date())
+    comment    = Column(VARCHAR(256))
+    customer = relationship("Customer", backref=backref("receiptions", order_by=id))
+    product  = relationship("Product", backref=backref("receiptions", order_by=id))
 
-    def __init__(self, name, short_name, address=None, email=None,
-                 contact=None,telephone=None,cellphone=None, comment=None):
-        self.name = name
-        self.short_name = short_name
-        self.contact = contact
-        self.address = address
-        self.email=email
-        self.telephone = telephone
-        self.cellphone = cellphone
+    def __init__(self, customer,product,amount,account,recvdate=None,comment=None):
+        self.customer = customer
+        self.product = product
+        self.amount = amount
+        self.account = account
+        self.recvdate=recvdate
         self.comment = comment
 
     def __repr__(self):
@@ -141,12 +144,19 @@ def get_db_session():
     else:
         return DB_SESSION
 
+def get_db_engine():
+    global DB_ENGINE
+    if not DB_ENGINE:
+        raise Exception('Invalid DB Engine!')
+    else:
+        return DB_ENGINE
+
 def db_validate():
     pass
 
 
 def initialize_db():
-    Base.metadata.create_all(get_db_session())
+    Base.metadata.create_all(get_db_engine())
 
 
 
