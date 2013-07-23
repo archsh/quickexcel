@@ -131,7 +131,7 @@ DB_SESSION = None
 
 def setup_db_session(dbpath):
     global DB_ENGINE,DB_SESSION
-    DB_ENGINE  = create_engine('sqlite:///:memory:', echo=True)
+    DB_ENGINE  = create_engine(dbpath, echo=True)
     DB_SESSION = sessionmaker(bind=DB_ENGINE)
 
 def get_db_session():

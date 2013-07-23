@@ -38,7 +38,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
     
     def load_Config(self):
         import ConfigParser
-        if True: #not self.config_file:
+        if self.config_file:
             reply = QtGui.QMessageBox.critical(self, "QMessageBox.critical()",
                     u"无效的配置文件！",
                     QtGui.QMessageBox.Abort)
@@ -46,6 +46,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         else:
             config = ConfigParser.ConfigParser()
             config.read(options.configfile)
+        self.db_file = config.get('global','dbfile') if config.has_option('global','dbfile') else 'sqlite:///quickexcel.db'
+        
     
     def do_Init(self):
         pass
