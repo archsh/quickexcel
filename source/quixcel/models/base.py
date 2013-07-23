@@ -1,14 +1,15 @@
 ### Base Class of Model
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
-Base = declarative_base()
-
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import Column, \
             BLOB, BOOLEAN, CHAR, DATE, DATETIME, DECIMAL, FLOAT, \
             INTEGER, NUMERIC, SMALLINT, TEXT, TIME, TIMESTAMP, \
             VARCHAR, ForeignKey
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
+
+Base = declarative_base()
 
 class Customer(Base):
     __tablename__ = 'customers'
@@ -92,19 +93,19 @@ class Delivery(Base):
     product  = relationship("Product", backref=backref("deliveries", order_by=id))
     employee = relationship("Employee", backref=backref("deliveries", order_by=id))
 
-    def __init__(self, sn, customer, product,num,price,amount,employee,dlv_date=None, comment=None):
+    def __init__(self, sn, customer, product,num,price=None,amount=None,employee=None,dlv_date=None, comment=None):
         self.sn = sn
         self.customer = customer
         self.product = product
         self.num = num
-        self.price=price
-        self.amount = amount
+        self.price=product.price if not price else price
+        self.amount = self.price*self.num if not amount else amount
         self.employee = employee
         self.dlv_date = dlv_date
         self.comment = comment
 
     def __repr__(self):
-        return "<Delivery('%s')>" % self.name
+        return "<Delivery('%s')>" % self.sn
 
 class Receipt(Base):
     __tablename__ = 'receipts'
@@ -127,15 +128,16 @@ class Receipt(Base):
         self.comment = comment
 
     def __repr__(self):
-        return "<Receipt('%s')>" % self.name
+        return "<Receipt('%s')>" % self.id
 
 DB_ENGINE  = None
 DB_SESSION = None
 
 def setup_db_session(dbpath):
     global DB_ENGINE,DB_SESSION
-    DB_ENGINE  = create_engine(dbpath, echo=True)
-    DB_SESSION = sessionmaker(bind=DB_ENGINE)
+    DB_ENGINE  = create_engine(dbpath, echo=False)
+    Session = sessionmaker(bind=DB_ENGINE)
+    DB_SESSION = Session()
 
 def get_db_session():
     global DB_SESSION
