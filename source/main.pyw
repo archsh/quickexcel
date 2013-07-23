@@ -6,7 +6,7 @@ from PyQt4 import QtCore, QtGui
 if __name__ == '__main__':
 
     import sys
-    from ui.MainWindow import MainWindow
+    from quixcel.ui.MainWindow import MainWindow
     from optparse import OptionParser
     parser = OptionParser()
     parser.add_option("-c", "--config", dest="configfile",default='quickexcel.ini',
