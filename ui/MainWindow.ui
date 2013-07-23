@@ -92,7 +92,7 @@
    </property>
    <widget class="QMenu" name="menu_System">
     <property name="title">
-     <string>系统 (S)</string>
+     <string>系统 (&amp;S)</string>
     </property>
     <addaction name="action_Backup"/>
     <addaction name="action_Restore"/>
@@ -106,7 +106,7 @@
    </widget>
    <widget class="QMenu" name="menu_Delivery">
     <property name="title">
-     <string>发货 (D)</string>
+     <string>发货 (&amp;D)</string>
     </property>
     <addaction name="action_Deliver"/>
     <addaction name="action_Return"/>
@@ -116,7 +116,7 @@
    </widget>
    <widget class="QMenu" name="menu_Receipt">
     <property name="title">
-     <string>收款 (F)</string>
+     <string>收款 (&amp;F)</string>
     </property>
     <addaction name="action_Receipt"/>
     <addaction name="separator"/>
@@ -125,7 +125,7 @@
    </widget>
    <widget class="QMenu" name="menu_Meta">
     <property name="title">
-     <string>基础资料 (M)</string>
+     <string>基础资料 (&amp;M)</string>
     </property>
     <addaction name="action_Customers"/>
     <addaction name="action_Goods"/>
@@ -133,13 +133,13 @@
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
-     <string>帮助 (H)</string>
+     <string>帮助 (&amp;H)</string>
     </property>
     <addaction name="action_About"/>
    </widget>
    <widget class="QMenu" name="menu_Report">
     <property name="title">
-     <string>报表(R)</string>
+     <string>报表(&amp;R)</string>
     </property>
     <addaction name="action_DeliveryReport"/>
     <addaction name="action_ReceiptReport"/>

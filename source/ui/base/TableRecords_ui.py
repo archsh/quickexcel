@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Mon Jul 22 23:08:08 2013
+# Created: Tue Jul 23 09:51:30 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -106,9 +106,9 @@ class Ui_TableRecords(object):
     def retranslateUi(self, TableRecords):
         TableRecords.setWindowTitle(_translate("TableRecords", "TableRecords", None))
         self.label_Title.setText(_translate("TableRecords", "发货记录", None))
-        self.pushButton_Filter.setText(_translate("TableRecords", "筛选", None))
-        self.pushButton_Delete.setText(_translate("TableRecords", "删除", None))
-        self.pushButton_Modify.setText(_translate("TableRecords", "修改", None))
-        self.pushButton_New.setText(_translate("TableRecords", "新增", None))
+        self.pushButton_Filter.setText(_translate("TableRecords", "筛选 (&F)", None))
+        self.pushButton_Delete.setText(_translate("TableRecords", "删除 (&D)", None))
+        self.pushButton_Modify.setText(_translate("TableRecords", "修改 (&E)", None))
+        self.pushButton_New.setText(_translate("TableRecords", "新增 (&N)", None))
 
 import resource_rc

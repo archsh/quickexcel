@@ -154,14 +154,14 @@
      <item>
       <widget class="QPushButton" name="pushButton_Cancel">
        <property name="text">
-        <string>取 消</string>
+        <string>取 消 (&amp;C)</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_Save">
        <property name="text">
-        <string>保 存</string>
+        <string>保 存 (&amp;S)</string>
        </property>
       </widget>
      </item>

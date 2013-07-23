@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormCustomer.ui'
 #
-# Created: Mon Jul 22 23:08:07 2013
+# Created: Tue Jul 23 09:51:29 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -159,6 +159,6 @@ class Ui_FormCustomer(object):
         self.label_6.setText(_translate("FormCustomer", "手机：", None))
         self.label_2.setText(_translate("FormCustomer", "邮件：", None))
         self.label_11.setText(_translate("FormCustomer", "业务员：", None))
-        self.pushButton_Cancel.setText(_translate("FormCustomer", "取 消", None))
-        self.pushButton_Save.setText(_translate("FormCustomer", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormCustomer", "取 消 (&C)", None))
+        self.pushButton_Save.setText(_translate("FormCustomer", "保 存 (&S)", None))
 

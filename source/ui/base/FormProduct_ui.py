@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormProduct.ui'
 #
-# Created: Mon Jul 22 23:08:08 2013
+# Created: Tue Jul 23 09:51:30 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -116,6 +116,6 @@ class Ui_FormProduct(object):
         self.label_5.setText(_translate("FormProduct", "主型号：", None))
         self.label_4.setText(_translate("FormProduct", "副型号：", None))
         self.label_7.setText(_translate("FormProduct", "单 价：", None))
-        self.pushButton_Cancel.setText(_translate("FormProduct", "取 消", None))
-        self.pushButton_Save.setText(_translate("FormProduct", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormProduct", "取 消 (&C)", None))
+        self.pushButton_Save.setText(_translate("FormProduct", "保 存 (&S)", None))
 

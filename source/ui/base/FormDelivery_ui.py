@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormDelivery.ui'
 #
-# Created: Mon Jul 22 23:08:07 2013
+# Created: Tue Jul 23 09:51:29 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -192,6 +192,6 @@ class Ui_FormDelivery(object):
         self.label_12.setText(_translate("FormDelivery", "业务员：", None))
         self.label_6.setText(_translate("FormDelivery", "日 期：", None))
         self.label_13.setText(_translate("FormDelivery", "记 录：", None))
-        self.pushButton_Cancel.setText(_translate("FormDelivery", "取 消", None))
-        self.pushButton_Save.setText(_translate("FormDelivery", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormDelivery", "取 消 (&C)", None))
+        self.pushButton_Save.setText(_translate("FormDelivery", "保 存 (&S)", None))
 

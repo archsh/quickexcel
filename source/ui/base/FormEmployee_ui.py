@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormEmployee.ui'
 #
-# Created: Mon Jul 22 23:08:08 2013
+# Created: Tue Jul 23 09:51:29 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -113,6 +113,6 @@ class Ui_FormEmployee(object):
         self.label_9.setText(_translate("FormEmployee", "姓名：", None))
         self.label_4.setText(_translate("FormEmployee", "邮件：", None))
         self.label_5.setText(_translate("FormEmployee", "电话：", None))
-        self.pushButton_Cancel.setText(_translate("FormEmployee", "取 消", None))
-        self.pushButton_Save.setText(_translate("FormEmployee", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormEmployee", "取 消 (&C)", None))
+        self.pushButton_Save.setText(_translate("FormEmployee", "保 存 (&S)", None))
 

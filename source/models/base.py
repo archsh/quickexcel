@@ -4,6 +4,8 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 from sqlalchemy import Column, Integer, String, ForeignKey
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
 
 class Customer(Base):
     __tablename__ = 'customers'
@@ -124,17 +126,29 @@ class Receipt(Base):
     def __repr__(self):
         return "<Receipt('%s')>" % self.name
 
+DB_ENGINE  = None
+DB_SESSION = None
+
 def setup_db_session(dbpath):
-    pass
+    global DB_ENGINE,DB_SESSION
+    DB_ENGINE  = create_engine('sqlite:///:memory:', echo=True)
+    DB_SESSION = sessionmaker(bind=DB_ENGINE)
+
+def get_db_session():
+    global DB_SESSION
+    if not DB_SESSION:
+        raise Exception('Invalid DB Session!')
+    else:
+        return DB_SESSION
 
 def db_validate():
     pass
 
 
 def initialize_db():
-    pass
+    Base.metadata.create_all(get_db_session())
 
 
 
-Base.metadata.create_all(engine)
+
 

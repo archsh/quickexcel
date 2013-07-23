@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormReceipt.ui'
 #
-# Created: Mon Jul 22 23:08:08 2013
+# Created: Tue Jul 23 09:51:30 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -155,6 +155,6 @@ class Ui_FormReceipt(object):
         self.label_8.setText(_translate("FormReceipt", "入/出账账号：", None))
         self.label_11.setText(_translate("FormReceipt", "收/付款人：", None))
         self.label_13.setText(_translate("FormReceipt", "记 录：", None))
-        self.pushButton_Cancel.setText(_translate("FormReceipt", "取 消", None))
-        self.pushButton_Save.setText(_translate("FormReceipt", "保 存", None))
+        self.pushButton_Cancel.setText(_translate("FormReceipt", "取 消 (&C)", None))
+        self.pushButton_Save.setText(_translate("FormReceipt", "保 存 (&S)", None))
 

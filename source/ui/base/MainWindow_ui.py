@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/MainWindow.ui'
 #
-# Created: Mon Jul 22 20:23:26 2013
+# Created: Tue Jul 23 09:51:30 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -221,12 +221,12 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar", None))
-        self.menu_System.setTitle(_translate("MainWindow", "系统 (S)", None))
-        self.menu_Delivery.setTitle(_translate("MainWindow", "发货 (D)", None))
-        self.menu_Receipt.setTitle(_translate("MainWindow", "收款 (F)", None))
-        self.menu_Meta.setTitle(_translate("MainWindow", "基础资料 (M)", None))
-        self.menu_Help.setTitle(_translate("MainWindow", "帮助 (H)", None))
-        self.menu_Report.setTitle(_translate("MainWindow", "报表(R)", None))
+        self.menu_System.setTitle(_translate("MainWindow", "系统 (&S)", None))
+        self.menu_Delivery.setTitle(_translate("MainWindow", "发货 (&D)", None))
+        self.menu_Receipt.setTitle(_translate("MainWindow", "收款 (&F)", None))
+        self.menu_Meta.setTitle(_translate("MainWindow", "基础资料 (&M)", None))
+        self.menu_Help.setTitle(_translate("MainWindow", "帮助 (&H)", None))
+        self.menu_Report.setTitle(_translate("MainWindow", "报表(&R)", None))
         self.action_Backup.setText(_translate("MainWindow", "备份数据", None))
         self.action_Backup.setShortcut(_translate("MainWindow", "Ctrl+Alt+S", None))
         self.action_Restore.setText(_translate("MainWindow", "恢复数据", None))

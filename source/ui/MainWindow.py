@@ -10,7 +10,7 @@ except AttributeError:
         return s
 
 class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
-    def __init__(self):
+    def __init__(self,config='quickexcel.ini'):
         super(MainWindow, self).__init__()
         self.setupUi(self)
         QtCore.QObject.connect(self.action_About, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_About)
@@ -33,9 +33,19 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         QtCore.QObject.connect(self.action_ReceiptSummarize, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_ReceiptSummarize)
         QtCore.QObject.connect(self.action_Restore, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_Restore)
         QtCore.QObject.connect(self.action_Return, QtCore.SIGNAL(_fromUtf8("triggered()")), self.do_Return)
+        self.config_file = config
+        self.load_Config()
     
     def load_Config(self):
-        pass
+        import ConfigParser
+        if True: #not self.config_file:
+            reply = QtGui.QMessageBox.critical(self, "QMessageBox.critical()",
+                    u"无效的配置文件！",
+                    QtGui.QMessageBox.Abort)
+            self.close()
+        else:
+            config = ConfigParser.ConfigParser()
+            config.read(options.configfile)
     
     def do_Init(self):
         pass
