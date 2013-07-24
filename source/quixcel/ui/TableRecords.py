@@ -25,6 +25,12 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         self._rootwin = rootwin
         super(TableRecords, self).__init__()
         self.setupUi(self)
+        self.pushButton_Delete.setEnabled(False)
+        self.pushButton_Last10Page.setEnabled(False)
+        self.pushButton_LastPage.setEnabled(False)
+        self.pushButton_Modify.setEnabled(False)
+        self.pushButton_Next10Page.setEnabled(False)
+        self.pushButton_NextPage.setEnabled(False)
         
         if target=='DeliveryList':
             self.setWindowTitle(u"发货记录")

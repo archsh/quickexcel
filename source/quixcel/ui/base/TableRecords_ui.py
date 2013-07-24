@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Wed Jul 24 12:21:59 2013
+# Created: Wed Jul 24 12:24:36 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -43,6 +43,11 @@ class Ui_TableRecords(object):
         self.label_Title = QtGui.QLabel(TableRecords)
         self.label_Title.setObjectName(_fromUtf8("label_Title"))
         self.horizontalLayout.addWidget(self.label_Title)
+        self.label_FilterMask = QtGui.QLabel(TableRecords)
+        self.label_FilterMask.setText(_fromUtf8(""))
+        self.label_FilterMask.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_FilterMask.setObjectName(_fromUtf8("label_FilterMask"))
+        self.horizontalLayout.addWidget(self.label_FilterMask)
         self.pushButton_Filter = QtGui.QPushButton(TableRecords)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_027_search.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -50,7 +55,7 @@ class Ui_TableRecords(object):
         self.pushButton_Filter.setFlat(True)
         self.pushButton_Filter.setObjectName(_fromUtf8("pushButton_Filter"))
         self.horizontalLayout.addWidget(self.pushButton_Filter)
-        self.horizontalLayout.setStretch(1, 1)
+        self.horizontalLayout.setStretch(2, 1)
         self.verticalLayout.addLayout(self.horizontalLayout)
         self.tableView_Records = QtGui.QTableView(TableRecords)
         self.tableView_Records.setObjectName(_fromUtf8("tableView_Records"))
