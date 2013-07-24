@@ -246,7 +246,7 @@
   <action name="action_DeliverySummarize">
    <property name="icon">
     <iconset resource="resource.qrc">
-     <normaloff>:/icons/icons/glyphicons_119_table.png</normaloff>:/icons/icons/glyphicons_119_table.png</iconset>
+     <normaloff>:/icons/icons/glyphicons_089_building.png</normaloff>:/icons/icons/glyphicons_089_building.png</iconset>
    </property>
    <property name="text">
     <string>发货汇总</string>

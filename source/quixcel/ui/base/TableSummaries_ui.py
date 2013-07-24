@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableSummaries.ui'
 #
-# Created: Wed Jul 24 19:54:13 2013
+# Created: Wed Jul 24 20:17:33 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -122,6 +122,12 @@ class Ui_TableSummaries(object):
         self.pushButton_ExportImage.setIcon(icon5)
         self.pushButton_ExportImage.setObjectName(_fromUtf8("pushButton_ExportImage"))
         self.horizontalLayout_2.addWidget(self.pushButton_ExportImage)
+        self.pushButton_ExportExcel = QtGui.QPushButton(TableSummaries)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_119_table.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_ExportExcel.setIcon(icon6)
+        self.pushButton_ExportExcel.setObjectName(_fromUtf8("pushButton_ExportExcel"))
+        self.horizontalLayout_2.addWidget(self.pushButton_ExportExcel)
         self.horizontalLayout_2.setStretch(0, 1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
@@ -141,5 +147,7 @@ class Ui_TableSummaries(object):
         self.pushButton_Print.setShortcut(_translate("TableSummaries", "Ctrl+P", None))
         self.pushButton_ExportImage.setText(_translate("TableSummaries", "导出图片 (&M)", None))
         self.pushButton_ExportImage.setShortcut(_translate("TableSummaries", "Ctrl+M", None))
+        self.pushButton_ExportExcel.setText(_translate("TableSummaries", "导出表格 (&X)", None))
+        self.pushButton_ExportExcel.setShortcut(_translate("TableSummaries", "Ctrl+X", None))
 
 import resource_rc

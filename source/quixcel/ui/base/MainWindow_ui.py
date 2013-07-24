@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/MainWindow.ui'
 #
-# Created: Wed Jul 24 20:11:12 2013
+# Created: Wed Jul 24 20:17:33 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -110,7 +110,7 @@ class Ui_MainWindow(object):
         self.action_DeliveryRecords.setObjectName(_fromUtf8("action_DeliveryRecords"))
         self.action_DeliverySummarize = QtGui.QAction(MainWindow)
         icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_119_table.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon8.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_089_building.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.action_DeliverySummarize.setIcon(icon8)
         self.action_DeliverySummarize.setObjectName(_fromUtf8("action_DeliverySummarize"))
         self.action_Receipt = QtGui.QAction(MainWindow)

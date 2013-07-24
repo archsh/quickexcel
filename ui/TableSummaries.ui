@@ -168,7 +168,7 @@
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,0,0,0">
      <item>
       <widget class="QLabel" name="label_2">
        <property name="text">
@@ -204,13 +204,27 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_ExportExcel">
+       <property name="text">
+        <string>导出表格 (&amp;X)</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resource.qrc">
+         <normaloff>:/icons/icons/glyphicons_119_table.png</normaloff>:/icons/icons/glyphicons_119_table.png</iconset>
+       </property>
+       <property name="shortcut">
+        <string>Ctrl+X</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
   </layout>
  </widget>
  <resources>
   <include location="resource.qrc"/>
-  <include location="C:/Python27/Lib/site-packages/PyQt4/resource.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>
