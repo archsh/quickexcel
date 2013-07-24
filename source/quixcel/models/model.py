@@ -21,6 +21,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
         return len(self.columns)
 
     def data(self, index, role):
+        #print 'index:',index, 'role:',role
         if not index.isValid():
             return None
         if role == QtCore.Qt.DisplayRole:
@@ -29,9 +30,9 @@ class QuickTableModel(QtCore.QAbstractTableModel):
             clmn = self.columns[index.column()][2]
             #print 'Column Type:', clmn.type.__class__.__name__
             if clmn.type.__class__.__name__ in ('INTEGER','NUMERIC'):
-                return QtCore.Qt.AlignRight
+                return QtCore.Qt.AlignRight|QtCore.Qt.AlignVCenter
             else:
-                return QtCore.Qt.AlignLeft
+                return QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter
         else:
             return None
 
@@ -47,6 +48,8 @@ class QuickTableModel(QtCore.QAbstractTableModel):
                     return self.columns[section][1]
             else:
                 return self.query_data[section].id
+        elif role==QtCore.Qt.TextAlignmentRole:
+                return QtCore.Qt.AlignCenter|QtCore.Qt.AlignVCenter
         return None
 
     def getIDFromText(self, text):
@@ -114,4 +117,22 @@ class QuickTableModel(QtCore.QAbstractTableModel):
     
     def _query_data(self):
         return self.quick_session.query(self.tabledef).all()
+    
+    
+    def set_num_per_page(self, num=25):
+        self.num_per_page = num
+    
+    def go_page(self, num=0):
+        pass
+    
+    def get_pages(self):
+        pass
+    
+    def get_page(self):
+        pass
+    
+    
+    
+    
+    
     
