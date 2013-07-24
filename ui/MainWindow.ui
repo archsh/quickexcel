@@ -82,10 +82,10 @@
    <addaction name="action_Receipt"/>
    <addaction name="separator"/>
    <addaction name="action_DeliveryRecords"/>
-   <addaction name="action_DeliverySummarize"/>
    <addaction name="action_ReceiptRecords"/>
-   <addaction name="action_ReceiptSummarize"/>
    <addaction name="separator"/>
+   <addaction name="action_DeliverySummarize"/>
+   <addaction name="action_ReceiptSummarize"/>
    <addaction name="action_DeliveryReport"/>
    <addaction name="action_ReceiptReport"/>
    <addaction name="separator"/>

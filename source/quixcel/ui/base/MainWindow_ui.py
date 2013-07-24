@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/MainWindow.ui'
 #
-# Created: Wed Jul 24 20:10:10 2013
+# Created: Wed Jul 24 20:11:12 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -178,10 +178,10 @@ class Ui_MainWindow(object):
         self.toolBar.addAction(self.action_Receipt)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.action_DeliveryRecords)
-        self.toolBar.addAction(self.action_DeliverySummarize)
         self.toolBar.addAction(self.action_ReceiptRecords)
-        self.toolBar.addAction(self.action_ReceiptSummarize)
         self.toolBar.addSeparator()
+        self.toolBar.addAction(self.action_DeliverySummarize)
+        self.toolBar.addAction(self.action_ReceiptSummarize)
         self.toolBar.addAction(self.action_DeliveryReport)
         self.toolBar.addAction(self.action_ReceiptReport)
         self.toolBar.addSeparator()
