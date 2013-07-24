@@ -21,12 +21,12 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
     def setupModel(self):
         if self._target=='DeliveryList':
             self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
-        elif self._target=='DeliverySummary':
-            self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+        #elif self._target=='DeliverySummary':
+        #    self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
         elif self._target=='ReceiptList':
             self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
-        elif self._target=='ReceiptSummary':
-            self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+        #elif self._target=='ReceiptSummary':
+        #    self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
         elif self._target=='EmployeeList':
             self._model = QuickTableModel(tabledef=Employee,parent=self.tableView_Records)
         elif self._target=='CustomerList':
@@ -41,7 +41,7 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         #self.tableView_Records.setSelectionBehavior(QAbstractItemView.SelectRows)
     
     def __init__(self,target='DeliveryList',rootwin=None):
-        if target not in ('DeliveryList','DeliverySummary','ReceiptList','ReceiptSummary','EmployeeList','CustomerList','ProductList'):
+        if target not in ('DeliveryList','ReceiptList','EmployeeList','CustomerList','ProductList'):# 'DeliverySummary','ReceiptSummary',
             raise Exception('Wrong target.')
         if not rootwin:
             raise Exception('Rootwin should provided.')
@@ -60,18 +60,18 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
             self.setWindowTitle(u"发货记录")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_114_list.png")))
             self.label_Title.setText(_translate("TableRecords", "发货记录", None))
-        elif target=='DeliverySummary':
-            self.setWindowTitle(u"发货汇总")
-            self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_119_table.png")))
-            self.label_Title.setText(_translate("TableRecords", "发货汇总", None))
+        #elif target=='DeliverySummary':
+        #    self.setWindowTitle(u"发货汇总")
+        #    self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_119_table.png")))
+        #    self.label_Title.setText(_translate("TableRecords", "发货汇总", None))
         elif target=='ReceiptList':
             self.setWindowTitle(u"收款记录")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_113_justify.png")))
             self.label_Title.setText(_translate("TableRecords", "收款记录", None))
-        elif target=='ReceiptSummary':
-            self.setWindowTitle(u"收款汇总")
-            self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_325_wallet.png")))
-            self.label_Title.setText(_translate("TableRecords", "收款汇总", None))
+        #elif target=='ReceiptSummary':
+        #    self.setWindowTitle(u"收款汇总")
+        #    self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_325_wallet.png")))
+        #    self.label_Title.setText(_translate("TableRecords", "收款汇总", None))
         elif target=='EmployeeList':
             self.setWindowTitle(u"业务列表")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_043_group.png")))
