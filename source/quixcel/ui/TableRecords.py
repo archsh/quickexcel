@@ -21,27 +21,24 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
     def setupModel(self):
         if self._target=='DeliveryList':
             self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='DeliverySummary':
             self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='ReceiptList':
             self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='ReceiptSummary':
             self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='EmployeeList':
             self._model = QuickTableModel(tabledef=Employee,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='CustomerList':
             self._model = QuickTableModel(tabledef=Customer,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
         elif self._target=='ProductList':
             self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
-            self.tableView_Records.setModel(self._model)
+        proxyModel = QtGui.QSortFilterProxyModel()
+        proxyModel.setSourceModel(self._model);
+        self.tableView_Records.setModel(proxyModel)
         self.tableView_Records.setSortingEnabled(True)
         self.tableView_Records.resizeColumnsToContents()
+        #self.tableView_Records.setSelectionBehavior(QAbstractItemView.SelectRows)
     
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','DeliverySummary','ReceiptList','ReceiptSummary','EmployeeList','CustomerList','ProductList'):

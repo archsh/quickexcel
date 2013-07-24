@@ -33,7 +33,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
     def flags(self, index):
         if not index.isValid():
             return QtCore.Qt.NoItemFlags
-        return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEditable
+        return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable # | QtCore.Qt.ItemIsEditable
 
     def headerData(self, section, orientation, role):
         if role == QtCore.Qt.DisplayRole:
@@ -101,6 +101,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
     def sort(self, Ncol, order):
         """Sort table by given column number.
         """
+        print 'Sort by column(%d)'%Ncol, order
         self.emit(QtCore.SIGNAL("layoutAboutToBeChanged()"))
         reverse = True if order == Qt.DescendingOrder else False
         self.query_data = sorted(self.query_data, key=lambda x: getattr(x,self.columns[Ncol][0]),reverse=reverse)        
