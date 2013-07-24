@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableSummaries.ui'
 #
-# Created: Wed Jul 24 19:34:56 2013
+# Created: Wed Jul 24 19:54:13 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -48,19 +48,19 @@ class Ui_TableSummaries(object):
         self.label = QtGui.QLabel(TableSummaries)
         self.label.setObjectName(_fromUtf8("label"))
         self.horizontalLayout.addWidget(self.label)
-        self.comboBox_CharType = QtGui.QComboBox(TableSummaries)
-        self.comboBox_CharType.setFrame(False)
-        self.comboBox_CharType.setObjectName(_fromUtf8("comboBox_CharType"))
+        self.comboBox_ChartType = QtGui.QComboBox(TableSummaries)
+        self.comboBox_ChartType.setFrame(False)
+        self.comboBox_ChartType.setObjectName(_fromUtf8("comboBox_ChartType"))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_042_pie_chart.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.comboBox_CharType.addItem(icon, _fromUtf8(""))
+        self.comboBox_ChartType.addItem(icon, _fromUtf8(""))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_040_stats.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.comboBox_CharType.addItem(icon1, _fromUtf8(""))
+        self.comboBox_ChartType.addItem(icon1, _fromUtf8(""))
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_041_charts.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.comboBox_CharType.addItem(icon2, _fromUtf8(""))
-        self.horizontalLayout.addWidget(self.comboBox_CharType)
+        self.comboBox_ChartType.addItem(icon2, _fromUtf8(""))
+        self.horizontalLayout.addWidget(self.comboBox_ChartType)
         self.pushButton_Filter = QtGui.QPushButton(TableSummaries)
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_027_search.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -129,12 +129,12 @@ class Ui_TableSummaries(object):
         QtCore.QMetaObject.connectSlotsByName(TableSummaries)
 
     def retranslateUi(self, TableSummaries):
-        TableSummaries.setWindowTitle(_translate("TableSummaries", "Form", None))
+        TableSummaries.setWindowTitle(_translate("TableSummaries", "TableSummaries", None))
         self.label_Title.setText(_translate("TableSummaries", "发货记录", None))
         self.label.setText(_translate("TableSummaries", "图表类型：", None))
-        self.comboBox_CharType.setItemText(0, _translate("TableSummaries", "饼图", None))
-        self.comboBox_CharType.setItemText(1, _translate("TableSummaries", "趋势图", None))
-        self.comboBox_CharType.setItemText(2, _translate("TableSummaries", "柱状图", None))
+        self.comboBox_ChartType.setItemText(0, _translate("TableSummaries", "饼图", None))
+        self.comboBox_ChartType.setItemText(1, _translate("TableSummaries", "趋势图", None))
+        self.comboBox_ChartType.setItemText(2, _translate("TableSummaries", "柱状图", None))
         self.pushButton_Filter.setText(_translate("TableSummaries", "筛选 (&F)", None))
         self.pushButton_Filter.setShortcut(_translate("TableSummaries", "F3", None))
         self.pushButton_Print.setText(_translate("TableSummaries", "打印 (&P)", None))

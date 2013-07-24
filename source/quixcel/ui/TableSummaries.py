@@ -49,4 +49,21 @@ class TableSummaries(QtGui.QWidget,Ui_TableSummaries):
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_325_wallet.png")))
             self.label_Title.setText(_translate("TableRecords", "收款汇总", None))
         self.setupModel()
+        
+        QtCore.QObject.connect(self.comboBox_ChartType, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.do_Change_ChartType)
+        QtCore.QObject.connect(self.pushButton_ExportImage, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_ExportImage)
+        QtCore.QObject.connect(self.pushButton_Filter, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Filter)
+        QtCore.QObject.connect(self.pushButton_Print, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Print)
+    
+    def do_Print(self):
+        pass
+        
+    def do_Filter(self):
+        pass
+        
+    def do_ExportImage(self):
+        pass
+    
+    def do_Change_ChartType(self,num):
+        pass
 
