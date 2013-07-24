@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/MainWindow.ui'
 #
-# Created: Tue Jul 23 17:16:57 2013
+# Created: Wed Jul 24 11:54:15 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -130,11 +130,11 @@ class Ui_MainWindow(object):
         icon12.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_024_parents.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.action_Customers.setIcon(icon12)
         self.action_Customers.setObjectName(_fromUtf8("action_Customers"))
-        self.action_Goods = QtGui.QAction(MainWindow)
+        self.action_Products = QtGui.QAction(MainWindow)
         icon13 = QtGui.QIcon()
         icon13.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_149_folder_new.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.action_Goods.setIcon(icon13)
-        self.action_Goods.setObjectName(_fromUtf8("action_Goods"))
+        self.action_Products.setIcon(icon13)
+        self.action_Products.setObjectName(_fromUtf8("action_Products"))
         self.action_Employees = QtGui.QAction(MainWindow)
         icon14 = QtGui.QIcon()
         icon14.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_043_group.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -183,7 +183,7 @@ class Ui_MainWindow(object):
         self.toolBar.addAction(self.action_ReceiptReport)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.action_Customers)
-        self.toolBar.addAction(self.action_Goods)
+        self.toolBar.addAction(self.action_Products)
         self.toolBar.addAction(self.action_Employees)
         self.toolBar.addSeparator()
         self.toolBar.addAction(self.action_Exit)
@@ -206,7 +206,7 @@ class Ui_MainWindow(object):
         self.menu_Receipt.addAction(self.action_ReceiptSummarize)
         self.menu_Receipt.addAction(self.action_ReceiptSheet)
         self.menu_Meta.addAction(self.action_Customers)
-        self.menu_Meta.addAction(self.action_Goods)
+        self.menu_Meta.addAction(self.action_Products)
         self.menu_Meta.addAction(self.action_Employees)
         self.menu_Help.addAction(self.action_About)
         self.menu_Report.addAction(self.action_DeliveryReport)
@@ -249,8 +249,9 @@ class Ui_MainWindow(object):
         self.action_ReceiptSheet.setText(_translate("MainWindow", "对账", None))
         self.action_Customers.setText(_translate("MainWindow", "客户资料", None))
         self.action_Customers.setShortcut(_translate("MainWindow", "Ctrl+M", None))
-        self.action_Goods.setText(_translate("MainWindow", "物料库", None))
-        self.action_Goods.setShortcut(_translate("MainWindow", "Ctrl+G", None))
+        self.action_Products.setText(_translate("MainWindow", "产品资料", None))
+        self.action_Products.setToolTip(_translate("MainWindow", "产品资料", None))
+        self.action_Products.setShortcut(_translate("MainWindow", "Ctrl+G", None))
         self.action_Employees.setText(_translate("MainWindow", "业务资料", None))
         self.action_Employees.setShortcut(_translate("MainWindow", "Ctrl+E", None))
         self.action_DeliveryReport.setText(_translate("MainWindow", "发货报表", None))

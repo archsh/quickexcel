@@ -80,7 +80,7 @@
    <addaction name="action_ReceiptReport"/>
    <addaction name="separator"/>
    <addaction name="action_Customers"/>
-   <addaction name="action_Goods"/>
+   <addaction name="action_Products"/>
    <addaction name="action_Employees"/>
    <addaction name="separator"/>
    <addaction name="action_Exit"/>
@@ -132,7 +132,7 @@
      <string>基础资料 (&amp;M)</string>
     </property>
     <addaction name="action_Customers"/>
-    <addaction name="action_Goods"/>
+    <addaction name="action_Products"/>
     <addaction name="action_Employees"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
@@ -284,13 +284,16 @@
     <string>Ctrl+M</string>
    </property>
   </action>
-  <action name="action_Goods">
+  <action name="action_Products">
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/icons/icons/glyphicons_149_folder_new.png</normaloff>:/icons/icons/glyphicons_149_folder_new.png</iconset>
    </property>
    <property name="text">
-    <string>物料库</string>
+    <string>产品资料</string>
+   </property>
+   <property name="toolTip">
+    <string>产品资料</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+G</string>
