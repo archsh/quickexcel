@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ### Base Class of Model
 import datetime
 from sqlalchemy.ext.declarative import declarative_base
@@ -13,15 +14,15 @@ Base = declarative_base()
 
 class Customer(Base):
     __tablename__ = 'customers'
-    id         = Column(INTEGER, primary_key=True)
-    name       = Column(VARCHAR(128),unique=True,nullable=False)
-    short_name = Column(VARCHAR(50),unique=True,nullable=False)
-    address    = Column(VARCHAR(128),nullable=False)
-    contact    = Column(VARCHAR(24),nullable=False)
-    telephone  = Column(VARCHAR(24),nullable=False)
-    cellphone  = Column(VARCHAR(24),nullable=False)
-    email      = Column(VARCHAR(50))
-    comment    = Column(VARCHAR(256))
+    id         = Column(INTEGER, primary_key=True,doc=u'编号')
+    name       = Column(VARCHAR(128),unique=True,nullable=False,doc=u'名称')
+    short_name = Column(VARCHAR(50),unique=True,nullable=False,doc=u'简称')
+    address    = Column(VARCHAR(128),nullable=False,doc=u'地址')
+    contact    = Column(VARCHAR(24),nullable=False,doc=u'联系人')
+    telephone  = Column(VARCHAR(24),nullable=False,doc=u'电话')
+    cellphone  = Column(VARCHAR(24),nullable=False,doc=u'手机')
+    email      = Column(VARCHAR(50),doc=u'邮件')
+    comment    = Column(VARCHAR(256),doc=u'备注')
 
     def __init__(self, name, short_name, address=None, email=None,
                  contact=None,telephone=None,cellphone=None, comment=None):
