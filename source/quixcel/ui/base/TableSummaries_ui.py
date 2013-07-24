@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableSummaries.ui'
 #
-# Created: Wed Jul 24 19:23:33 2013
+# Created: Wed Jul 24 19:34:56 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -28,6 +28,7 @@ class Ui_TableSummaries(object):
         TableSummaries.setObjectName(_fromUtf8("TableSummaries"))
         TableSummaries.resize(957, 456)
         self.verticalLayout = QtGui.QVBoxLayout(TableSummaries)
+        self.verticalLayout.setMargin(6)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
@@ -48,6 +49,7 @@ class Ui_TableSummaries(object):
         self.label.setObjectName(_fromUtf8("label"))
         self.horizontalLayout.addWidget(self.label)
         self.comboBox_CharType = QtGui.QComboBox(TableSummaries)
+        self.comboBox_CharType.setFrame(False)
         self.comboBox_CharType.setObjectName(_fromUtf8("comboBox_CharType"))
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_042_pie_chart.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -63,11 +65,16 @@ class Ui_TableSummaries(object):
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_027_search.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton_Filter.setIcon(icon3)
-        self.pushButton_Filter.setFlat(True)
+        self.pushButton_Filter.setFlat(False)
         self.pushButton_Filter.setObjectName(_fromUtf8("pushButton_Filter"))
         self.horizontalLayout.addWidget(self.pushButton_Filter)
         self.horizontalLayout.setStretch(2, 1)
         self.verticalLayout.addLayout(self.horizontalLayout)
+        self.line_2 = QtGui.QFrame(TableSummaries)
+        self.line_2.setFrameShape(QtGui.QFrame.HLine)
+        self.line_2.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_2.setObjectName(_fromUtf8("line_2"))
+        self.verticalLayout.addWidget(self.line_2)
         self.splitter = QtGui.QSplitter(TableSummaries)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -92,6 +99,11 @@ class Ui_TableSummaries(object):
         self.widget_Chart.setMinimumSize(QtCore.QSize(250, 200))
         self.widget_Chart.setObjectName(_fromUtf8("widget_Chart"))
         self.verticalLayout.addWidget(self.splitter)
+        self.line = QtGui.QFrame(TableSummaries)
+        self.line.setFrameShape(QtGui.QFrame.HLine)
+        self.line.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line.setObjectName(_fromUtf8("line"))
+        self.verticalLayout.addWidget(self.line)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
         self.label_2 = QtGui.QLabel(TableSummaries)
@@ -125,7 +137,9 @@ class Ui_TableSummaries(object):
         self.comboBox_CharType.setItemText(2, _translate("TableSummaries", "柱状图", None))
         self.pushButton_Filter.setText(_translate("TableSummaries", "筛选 (&F)", None))
         self.pushButton_Filter.setShortcut(_translate("TableSummaries", "F3", None))
-        self.pushButton_Print.setText(_translate("TableSummaries", "打印", None))
-        self.pushButton_ExportImage.setText(_translate("TableSummaries", "导出图片", None))
+        self.pushButton_Print.setText(_translate("TableSummaries", "打印 (&P)", None))
+        self.pushButton_Print.setShortcut(_translate("TableSummaries", "Ctrl+P", None))
+        self.pushButton_ExportImage.setText(_translate("TableSummaries", "导出图片 (&M)", None))
+        self.pushButton_ExportImage.setShortcut(_translate("TableSummaries", "Ctrl+M", None))
 
 import resource_rc

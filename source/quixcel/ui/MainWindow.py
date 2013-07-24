@@ -4,6 +4,7 @@ from PyQt4 import QtCore, QtGui
 from .base.MainWindow_ui import Ui_MainWindow
 from quixcel.models.base import get_db_session, setup_db_session, initialize_db
 from .TableRecords import TableRecords
+from .TableSummaries import TableSummaries
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -118,11 +119,11 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
     def do_DeliverySummarize(self):
         print 'do_DeliverySummarize'
         for subwin in self.mdiArea.subWindowList():
-            if isinstance(subwin.widget(),TableRecords) and subwin.widget()._target=='DeliverySummary':
+            if isinstance(subwin.widget(),TableSummaries) and subwin.widget()._target=='DeliverySummary':
                 subwin.showMaximized()
                 return
         else:
-            child = TableRecords(target='DeliverySummary',rootwin=self)
+            child = TableSummaries(target='DeliverySummary',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
     
@@ -172,11 +173,11 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
     def do_ReceiptSummarize(self):
         print 'do_ReceiptSummarize'
         for subwin in self.mdiArea.subWindowList():
-            if isinstance(subwin.widget(),TableRecords) and subwin.widget()._target=='ReceiptSummary':
+            if isinstance(subwin.widget(),TableSummaries) and subwin.widget()._target=='ReceiptSummary':
                 subwin.showMaximized()
                 return
         else:
-            child = TableRecords(target='ReceiptSummary',rootwin=self)
+            child = TableSummaries(target='ReceiptSummary',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
     
