@@ -9,7 +9,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
             raise Exception('Invalid tabledef.')
         self.tabledef = tabledef
         self.quick_session = get_db_session()
-        self.columns = [(c.name,c.doc)for c in tabledef.__table__.columns][1:]
+        self.columns = [(c.name,c.doc,c)for c in tabledef.__table__.columns][1:]
         self.query=None
         self.refresh()
         
@@ -23,12 +23,17 @@ class QuickTableModel(QtCore.QAbstractTableModel):
     def data(self, index, role):
         if not index.isValid():
             return None
-
-        if role != QtCore.Qt.DisplayRole:
+        if role == QtCore.Qt.DisplayRole:
+            return '%s'%getattr(self.query_data[index.row()],self.columns[index.column()][0])
+        elif role == QtCore.Qt.TextAlignmentRole:
+            clmn = self.columns[index.column()][2]
+            #print 'Column Type:', clmn.type.__class__.__name__
+            if clmn.type.__class__.__name__ in ('INTEGER','NUMERIC'):
+                return QtCore.Qt.AlignRight
+            else:
+                return QtCore.Qt.AlignLeft
+        else:
             return None
-
-        #item = index.row()
-        return '%s'%getattr(self.query_data[index.row()],self.columns[index.column()][0])
 
     def flags(self, index):
         if not index.isValid():

@@ -62,7 +62,7 @@ class Product(Base):
     name_major = Column(VARCHAR(24),nullable=False,doc=u'主型号')
     name_minor = Column(VARCHAR(12),nullable=False,doc=u'辅型号')
     name_ext   = Column(VARCHAR(12),doc=u'扩展型号')
-    price      = Column(NUMERIC(8,2),nullable=False,doc=u'价格')
+    price      = Column(NUMERIC(8,2),nullable=False,doc=u'单价')
     comment    = Column(VARCHAR(256),doc=u'备注')
 
     def __init__(self, sn, name_major, name_minor=None, name_ext=None,
@@ -85,7 +85,7 @@ class Delivery(Base):
     customer_id= Column(ForeignKey(Customer.__tablename__+'.id'),nullable=False,doc=u'客户')
     product_id = Column(ForeignKey(Product.__tablename__+'.id'),nullable=False,doc=u'产品')
     num        = Column(INTEGER,default=0,doc=u'数量')
-    price      = Column(NUMERIC(8,2),default=0.0,doc=u'价格')
+    price      = Column(NUMERIC(8,2),default=0.0,doc=u'单价')
     amount     = Column(NUMERIC(12,2),default=0.0,doc=u'金额')
     employee_id= Column(ForeignKey(Employee.__tablename__+'.id'),doc=u'业务员')
     dlv_date   = Column(DATE,default=datetime.datetime.now().date(),doc=u'发货日期')
