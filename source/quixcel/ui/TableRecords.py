@@ -16,6 +16,22 @@ except AttributeError:
         return QtGui.QApplication.translate(context, text, disambig)    
 
 class TableRecords(QtGui.QWidget,Ui_TableRecords):
+    def setupModel(self):
+        if self._target=='DeliveryList':
+            pass
+        elif self._target=='DeliverySummary':
+            pass
+        elif self._target=='ReceiptList':
+            pass
+        elif self._target=='ReceiptSummary':
+            pass
+        elif self._target=='EmployeeList':
+            pass
+        elif self._target=='CustomerList':
+            pass
+        elif self._target=='ProductList':
+            pass
+    
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','DeliverySummary','ReceiptList','ReceiptSummary','EmployeeList','CustomerList','ProductList'):
             raise Exception('Wrong target.')
@@ -60,7 +76,58 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
             self.setWindowTitle(u"产品列表")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_149_folder_new.png")))
             self.label_Title.setText(_translate("TableRecords", "产品列表", None))
-            
+        self.setupModel()
+        QtCore.QObject.connect(self.pushButton_Delete, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Delete)
+        QtCore.QObject.connect(self.pushButton_Filter, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Filter)
+        QtCore.QObject.connect(self.pushButton_Last10Page, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Last10Page)
+        QtCore.QObject.connect(self.pushButton_LastPage, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_LastPage)
+        QtCore.QObject.connect(self.pushButton_Modify, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Modify)
+        QtCore.QObject.connect(self.pushButton_New, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_New)
+        QtCore.QObject.connect(self.pushButton_Next10Page, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Next10Page)
+        QtCore.QObject.connect(self.pushButton_NextPage, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_NextPage)
+        QtCore.QObject.connect(self.pushButton_Reload, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Reload)
+        QtCore.QObject.connect(self.comboBox_NumPerPage, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.do_Change_NumPerPage)
+        
+    def do_Delete(self):
+        pass
+        
+    def do_Filter(self):
+        pass
+        
+    def do_Last10Page(self):
+        pass
+    
+    def do_LastPage(self):
+        pass
+    
+    def do_Modify(self):
+        pass
+    
+    def do_New(self):
+        pass
+    
+    def do_Next10Page(self):
+        pass
+    
+    def do_NextPage(self):
+        pass
+    
+    def do_Reload(self):
+        pass
+    
+    def do_Change_NumPerPage(self,num):
+        pass
+    
+    
+
+    
+    
+    
+    
+    
+        
+        
+        
     
     
 

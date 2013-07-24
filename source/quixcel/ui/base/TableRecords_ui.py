@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Wed Jul 24 12:24:36 2013
+# Created: Wed Jul 24 13:05:36 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -62,6 +62,13 @@ class Ui_TableRecords(object):
         self.verticalLayout.addWidget(self.tableView_Records)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
+        self.comboBox_NumPerPage = QtGui.QComboBox(TableRecords)
+        self.comboBox_NumPerPage.setEditable(True)
+        self.comboBox_NumPerPage.setObjectName(_fromUtf8("comboBox_NumPerPage"))
+        self.comboBox_NumPerPage.addItem(_fromUtf8(""))
+        self.comboBox_NumPerPage.addItem(_fromUtf8(""))
+        self.comboBox_NumPerPage.addItem(_fromUtf8(""))
+        self.horizontalLayout_2.addWidget(self.comboBox_NumPerPage)
         self.pushButton_Last10Page = QtGui.QPushButton(TableRecords)
         self.pushButton_Last10Page.setText(_fromUtf8(""))
         icon1 = QtGui.QIcon()
@@ -135,7 +142,7 @@ class Ui_TableRecords(object):
         self.pushButton_New.setFlat(True)
         self.pushButton_New.setObjectName(_fromUtf8("pushButton_New"))
         self.horizontalLayout_2.addWidget(self.pushButton_New)
-        self.horizontalLayout_2.setStretch(6, 1)
+        self.horizontalLayout_2.setStretch(7, 1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
 
         self.retranslateUi(TableRecords)
@@ -146,6 +153,9 @@ class Ui_TableRecords(object):
         self.label_Title.setText(_translate("TableRecords", "发货记录", None))
         self.pushButton_Filter.setText(_translate("TableRecords", "筛选 (&F)", None))
         self.pushButton_Filter.setShortcut(_translate("TableRecords", "F3", None))
+        self.comboBox_NumPerPage.setItemText(0, _translate("TableRecords", "25", None))
+        self.comboBox_NumPerPage.setItemText(1, _translate("TableRecords", "50", None))
+        self.comboBox_NumPerPage.setItemText(2, _translate("TableRecords", "100", None))
         self.pushButton_LastPage.setShortcut(_translate("TableRecords", "PgUp", None))
         self.pushButton_NextPage.setShortcut(_translate("TableRecords", "PgDown", None))
         self.pushButton_Reload.setText(_translate("TableRecords", "刷新 (F5)", None))

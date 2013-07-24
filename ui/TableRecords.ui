@@ -74,7 +74,29 @@
     <widget class="QTableView" name="tableView_Records"/>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0,0,0,1,0,0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0,0,0,0,0,0,1,0,0,0">
+     <item>
+      <widget class="QComboBox" name="comboBox_NumPerPage">
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string>25</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>50</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>100</string>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item>
       <widget class="QPushButton" name="pushButton_Last10Page">
        <property name="text">
