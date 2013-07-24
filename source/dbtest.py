@@ -61,5 +61,6 @@ if True:
     p2 = session.query(Product).all()[1]
     for d in session.query(Delivery).filter(Delivery.customer==c1,Delivery.product==p1):
         print d
+    print session.query(Customer).count()
     
 
