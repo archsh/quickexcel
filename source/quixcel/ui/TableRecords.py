@@ -73,15 +73,15 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         #    self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_325_wallet.png")))
         #    self.label_Title.setText(_translate("TableRecords", "收款汇总", None))
         elif target=='EmployeeList':
-            self.setWindowTitle(u"业务列表")
+            self.setWindowTitle(u"业务员资料")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_043_group.png")))
             self.label_Title.setText(_translate("TableRecords", "业务员资料", None))
         elif target=='CustomerList':
-            self.setWindowTitle(u"客户列表")
+            self.setWindowTitle(u"客户资料")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_024_parents.png")))
             self.label_Title.setText(_translate("TableRecords", "客户资料", None))
         elif target=='ProductList':
-            self.setWindowTitle(u"产品列表")
+            self.setWindowTitle(u"产品资料")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_149_folder_new.png")))
             self.label_Title.setText(_translate("TableRecords", "产品资料", None))
         self.setupModel()

@@ -93,7 +93,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableRecords(target='CustomerList',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【客户资料】")
+        #self.showMessage(u"【客户资料】")
     
     def do_DataExport(self):
         pass
@@ -114,7 +114,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableRecords(target='DeliveryList',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【发货记录】")
+        #self.showMessage(u"【发货记录】")
     
     def do_DeliveryReport(self):
         pass
@@ -129,7 +129,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableSummaries(target='DeliverySummary',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【发货汇总】")
+        #self.showMessage(u"【发货汇总】")
     
     def do_Employees(self):
         for subwin in self.mdiArea.subWindowList():
@@ -140,7 +140,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableRecords(target='EmployeeList',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【业务员资料】")
+        #self.showMessage(u"【业务员资料】")
     
     def do_Exit(self):
         self.close()
@@ -154,7 +154,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableRecords(target='ProductList',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【产品资料】")
+        #self.showMessage(u"【产品资料】")
     
     def do_Receipt(self):
         pass
@@ -169,7 +169,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableRecords(target='ReceiptList',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【收款记录】")
+        #self.showMessage(u"【收款记录】")
     
     def do_ReceiptReport(self):
         pass
@@ -187,7 +187,7 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
             child = TableSummaries(target='ReceiptSummary',rootwin=self)
             self.mdiArea.addSubWindow(child)
             child.showMaximized()
-        self.showMessage(u"【收款汇总】")
+        #self.showMessage(u"【收款汇总】")
     
     def do_Restore(self):
         pass
@@ -199,7 +199,24 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
         self.statusbar.showMessage(message,msecs)
     
     def on_subWindowActivated(self, subwindow):
-        pass
+        if not subwindow:
+            return
+        if isinstance(subwindow.widget(),(TableSummaries,TableRecords)):
+            target = subwindow.widget()._target
+            if target=='DeliveryList':
+                self.showMessage(u"发货记录")
+            elif target=='DeliverySummary':
+                self.showMessage(u"发货汇总")
+            elif target=='ReceiptList':
+                self.showMessage(u"收款记录")
+            elif target=='ReceiptSummary':
+                self.showMessage(u"收款汇总")
+            elif target=='EmployeeList':
+                self.showMessage(u"业务列表")
+            elif target=='CustomerList':
+                self.showMessage(u"客户列表")
+            elif target=='ProductList':
+                self.showMessage(u"产品列表")
     
     
     

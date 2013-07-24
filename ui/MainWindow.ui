@@ -382,22 +382,5 @@
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>mdiArea</sender>
-   <signal>subWindowActivated(QMdiSubWindow*)</signal>
-   <receiver>MainWindow</receiver>
-   <slot>repaint()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>460</x>
-     <y>333</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>460</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
