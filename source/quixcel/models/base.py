@@ -163,7 +163,13 @@ def initialize_db():
 
 from PyQt4 import QtCore
 
-class QuickItemModel(QtCore.QAbstractItemModel):
+class QuickItem(object):
+    def __init__(self, inst=None):
+        pass
+    
+
+
+class QuickTableModel(QtCore.QAbstractTableModel):
     def __init__(self,tabledef=None):
         super(CustomerModel, self).__init__()
         if not tabledef and not isinstance(tabledef,Base):
@@ -171,7 +177,10 @@ class QuickItemModel(QtCore.QAbstractItemModel):
         self.tabledef = tabledef
         self.quick_session = get_db_session()
 
-    def columnCount(self):
+    def rowCount(self, parent=None):
+        return self.quick_session.query(self.tabledef).count()
+    
+    def columnCount(self, parent=None):
         return self.quick_session.query(self.tabledef).count()
 
     def data(self, index, role):
@@ -210,7 +219,6 @@ class QuickItemModel(QtCore.QAbstractItemModel):
     def flags(self, index):
         if not index.isValid():
             return QtCore.Qt.NoItemFlags
-
         return QtCore.Qt.ItemIsEnabled | QtCore.Qt.ItemIsSelectable
 
     def headerData(self, section, orientation, role):
@@ -241,27 +249,5 @@ class QuickItemModel(QtCore.QAbstractItemModel):
         else:
             return QtCore.QModelIndex()
 
-    def parent(self, child):
-        if not child.isValid():
-            return QtCore.QModelIndex()
-
-        childItem = child.internalPointer()
-        parentItem = childItem.parent()
-
-        if not parentItem or parentItem == self.rootItem:
-            return QtCore.QModelIndex()
-
-        return self.createIndex(parentItem.row(), 0, parentItem)
-
-    def rowCount(self, parent):
-        if parent.column() > 0:
-            return 0
-
-        if not parent.isValid():
-            parentItem = self.rootItem
-        else:
-            parentItem = parent.internalPointer()
-
-        return parentItem.node().childNodes().count()
 
 
