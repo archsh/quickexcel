@@ -40,6 +40,8 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         elif self._target=='ProductList':
             self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
             self.tableView_Records.setModel(self._model)
+        self.tableView_Records.setSortingEnabled(True)
+        self.tableView_Records.resizeColumnsToContents()
     
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','DeliverySummary','ReceiptList','ReceiptSummary','EmployeeList','CustomerList','ProductList'):
