@@ -2,6 +2,8 @@
 
 from PyQt4 import QtCore, QtGui
 from .base.TableRecords_ui import Ui_TableRecords
+from ..models.model import QuickTableModel
+from ..models.base import Customer, Employee, Product, Delivery, Receipt
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -18,19 +20,26 @@ except AttributeError:
 class TableRecords(QtGui.QWidget,Ui_TableRecords):
     def setupModel(self):
         if self._target=='DeliveryList':
-            pass
+            self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='DeliverySummary':
-            pass
+            self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='ReceiptList':
-            pass
+            self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='ReceiptSummary':
-            pass
+            self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='EmployeeList':
-            pass
+            self._model = QuickTableModel(tabledef=Employee,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='CustomerList':
-            pass
+            self._model = QuickTableModel(tabledef=Customer,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
         elif self._target=='ProductList':
-            pass
+            self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
+            self.tableView_Records.setModel(self._model)
     
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','DeliverySummary','ReceiptList','ReceiptSummary','EmployeeList','CustomerList','ProductList'):
