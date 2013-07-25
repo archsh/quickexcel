@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Wed Jul 24 19:34:56 2013
+# Created: Wed Jul 24 20:51:07 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -154,6 +154,11 @@ class Ui_TableRecords(object):
         self.horizontalLayout_2.addWidget(self.pushButton_New)
         self.horizontalLayout_2.setStretch(7, 1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.line_3 = QtGui.QFrame(TableRecords)
+        self.line_3.setFrameShape(QtGui.QFrame.HLine)
+        self.line_3.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_3.setObjectName(_fromUtf8("line_3"))
+        self.verticalLayout.addWidget(self.line_3)
 
         self.retranslateUi(TableRecords)
         QtCore.QMetaObject.connectSlotsByName(TableRecords)

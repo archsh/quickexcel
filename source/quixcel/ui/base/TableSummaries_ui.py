@@ -2,13 +2,13 @@
 
 # Form implementation generated from reading ui file 'ui/TableSummaries.ui'
 #
-# Created: Wed Jul 24 20:17:33 2013
+# Created: Wed Jul 24 21:28:28 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt4 import QtCore, QtGui
-
+from ..Charts import PieView
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -90,7 +90,7 @@ class Ui_TableSummaries(object):
         self.tableView_Records = QtGui.QTableView(self.splitter)
         self.tableView_Records.setMinimumSize(QtCore.QSize(250, 200))
         self.tableView_Records.setObjectName(_fromUtf8("tableView_Records"))
-        self.widget_Chart = QtGui.QWidget(self.splitter)
+        self.widget_Chart = PieView(self.splitter)
         sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -130,6 +130,11 @@ class Ui_TableSummaries(object):
         self.horizontalLayout_2.addWidget(self.pushButton_ExportExcel)
         self.horizontalLayout_2.setStretch(0, 1)
         self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.line_3 = QtGui.QFrame(TableSummaries)
+        self.line_3.setFrameShape(QtGui.QFrame.HLine)
+        self.line_3.setFrameShadow(QtGui.QFrame.Sunken)
+        self.line_3.setObjectName(_fromUtf8("line_3"))
+        self.verticalLayout.addWidget(self.line_3)
 
         self.retranslateUi(TableSummaries)
         QtCore.QMetaObject.connectSlotsByName(TableSummaries)

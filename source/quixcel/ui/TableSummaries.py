@@ -4,6 +4,7 @@ from PyQt4 import QtCore, QtGui
 from .base.TableSummaries_ui import Ui_TableSummaries
 from ..models.model import QuickTableModel
 from ..models.base import Customer, Employee, Product, Delivery, Receipt
+from .Charts import PieView
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -25,9 +26,16 @@ class TableSummaries(QtGui.QWidget,Ui_TableSummaries):
             self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
         proxyModel = QtGui.QSortFilterProxyModel()
         proxyModel.setSourceModel(self._model);
-        self.tableView_Records.setModel(proxyModel)
+        self.tableView_Records.setModel(self._model)
         self.tableView_Records.setSortingEnabled(True)
         self.tableView_Records.resizeColumnsToContents()
+        self.widget_Chart.setModel(self._model)
+
+        self.selectionModel = QtGui.QItemSelectionModel(self._model)
+        self.tableView_Records.setSelectionModel(self.selectionModel)
+        self.widget_Chart.setSelectionModel(self.selectionModel)
+
+        self.tableView_Records.horizontalHeader().setStretchLastSection(True)
         #self.tableView_Records.setSelectionBehavior(QAbstractItemView.SelectRows)
     
     def __init__(self,target='DeliveryList',rootwin=None):

@@ -144,7 +144,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QWidget" name="widget_Chart" native="true">
+     <widget class="PieView" name="widget_Chart" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -220,8 +220,23 @@
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PieView</class>
+   <extends>QWidget</extends>
+   <header>Charts</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resource.qrc"/>
   <include location="resource.qrc"/>
