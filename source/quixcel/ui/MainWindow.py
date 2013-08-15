@@ -91,7 +91,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableRecords(target='CustomerList',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【客户资料】")
     
@@ -112,7 +113,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableRecords(target='DeliveryList',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【发货记录】")
     
@@ -127,7 +129,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableSummaries(target='DeliverySummary',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【发货汇总】")
     
@@ -138,7 +141,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableRecords(target='EmployeeList',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【业务员资料】")
     
@@ -152,7 +156,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableRecords(target='ProductList',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【产品资料】")
     
@@ -167,7 +172,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableRecords(target='ReceiptList',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【收款记录】")
     
@@ -185,7 +191,8 @@ class MainWindow(QtGui.QMainWindow,Ui_MainWindow):
                 return
         else:
             child = TableSummaries(target='ReceiptSummary',rootwin=self)
-            self.mdiArea.addSubWindow(child)
+            subwin = self.mdiArea.addSubWindow(child)
+            subwin.setAttribute(QtCore.Qt.WA_DeleteOnClose)
             child.showMaximized()
         #self.showMessage(u"【收款汇总】")
     
