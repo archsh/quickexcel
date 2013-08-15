@@ -111,7 +111,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
         """
         print 'Sort by column(%d)'%Ncol, order
         self.emit(QtCore.SIGNAL("layoutAboutToBeChanged()"))
-        reverse = True if order == Qt.DescendingOrder else False
+        reverse = True if order == QtCore.Qt.DescendingOrder else False
         self.query_data = sorted(self.query_data, key=lambda x: getattr(x,self.columns[Ncol][0]),reverse=reverse)        
         self.emit(QtCore.SIGNAL("layoutChanged()"))
     

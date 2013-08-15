@@ -15,7 +15,7 @@ except AttributeError:
     def _translate(context, text, disambig):
         return QtGui.QApplication.translate(context, text, disambig)
     
-class FormCustomer(QtGui.QWidget,Ui_FormCustomer):
+class FormCustomer(QtGui.QDialog,Ui_FormCustomer):
     def __init__(self,customer=None):
         super(FormCustomer, self).__init__()
         self.setupUi(self)

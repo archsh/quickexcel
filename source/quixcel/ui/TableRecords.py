@@ -4,6 +4,12 @@ from PyQt4 import QtCore, QtGui
 from .base.TableRecords_ui import Ui_TableRecords
 from ..models.model import QuickTableModel
 from ..models.base import Customer, Employee, Product, Delivery, Receipt
+from .FormCustomer import FormCustomer
+from .FormDelivery import FormDelivery
+from .FormEmployee import FormEmployee
+from .FormProduct import FormProduct
+from .FormReceipt import FormReceipt
+
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
@@ -112,7 +118,26 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         pass
     
     def do_New(self):
-        pass
+        if self._target=='DeliveryList':
+            #self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+            dlg = FormDelivery()
+        #elif self._target=='DeliverySummary':
+        #    self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+        elif self._target=='ReceiptList':
+            #self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+            dlg = FormReceipt()
+        #elif self._target=='ReceiptSummary':
+        #    self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+        elif self._target=='EmployeeList':
+            #self._model = QuickTableModel(tabledef=Employee,parent=self.tableView_Records)
+            dlg = FormEmployee()
+        elif self._target=='CustomerList':
+            #self._model = QuickTableModel(tabledef=Customer,parent=self.tableView_Records)
+            dlg = FormCustomer()
+        elif self._target=='ProductList':
+            #self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
+            dlg = FormProduct()
+        dlg.exec_()
     
     def do_Next10Page(self):
         pass

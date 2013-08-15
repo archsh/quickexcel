@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormEmployee.ui'
 #
-# Created: Tue Jul 23 09:51:29 2013
+# Created: Thu Aug 15 22:21:00 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_FormEmployee(object):
     def setupUi(self, FormEmployee):
         FormEmployee.setObjectName(_fromUtf8("FormEmployee"))
-        FormEmployee.resize(277, 173)
+        FormEmployee.resize(277, 158)
         font = QtGui.QFont()
         font.setPointSize(10)
         FormEmployee.setFont(font)

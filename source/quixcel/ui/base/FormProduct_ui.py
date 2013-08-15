@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormProduct.ui'
 #
-# Created: Tue Jul 23 09:51:30 2013
+# Created: Thu Aug 15 22:21:00 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,7 +26,7 @@ except AttributeError:
 class Ui_FormProduct(object):
     def setupUi(self, FormProduct):
         FormProduct.setObjectName(_fromUtf8("FormProduct"))
-        FormProduct.resize(234, 206)
+        FormProduct.resize(234, 218)
         font = QtGui.QFont()
         font.setPointSize(10)
         FormProduct.setFont(font)
@@ -37,18 +37,6 @@ class Ui_FormProduct(object):
         self.groupBox.setObjectName(_fromUtf8("groupBox"))
         self.verticalLayout = QtGui.QVBoxLayout(self.groupBox)
         self.verticalLayout.setObjectName(_fromUtf8("verticalLayout"))
-        self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
-        self.label_9 = QtGui.QLabel(self.groupBox)
-        self.label_9.setMinimumSize(QtCore.QSize(80, 0))
-        self.label_9.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
-        self.label_9.setObjectName(_fromUtf8("label_9"))
-        self.horizontalLayout.addWidget(self.label_9)
-        self.lineEdit_Model_SN = QtGui.QLineEdit(self.groupBox)
-        self.lineEdit_Model_SN.setMinimumSize(QtCore.QSize(120, 0))
-        self.lineEdit_Model_SN.setObjectName(_fromUtf8("lineEdit_Model_SN"))
-        self.horizontalLayout.addWidget(self.lineEdit_Model_SN)
-        self.verticalLayout.addLayout(self.horizontalLayout)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName(_fromUtf8("horizontalLayout_2"))
         self.label_5 = QtGui.QLabel(self.groupBox)
@@ -77,6 +65,20 @@ class Ui_FormProduct(object):
         self.comboBox_Model_Suffix.setObjectName(_fromUtf8("comboBox_Model_Suffix"))
         self.horizontalLayout_3.addWidget(self.comboBox_Model_Suffix)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.horizontalLayout_6 = QtGui.QHBoxLayout()
+        self.horizontalLayout_6.setObjectName(_fromUtf8("horizontalLayout_6"))
+        self.label_6 = QtGui.QLabel(self.groupBox)
+        self.label_6.setMinimumSize(QtCore.QSize(80, 0))
+        self.label_6.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_6.setObjectName(_fromUtf8("label_6"))
+        self.horizontalLayout_6.addWidget(self.label_6)
+        self.comboBox_Model_Suffix_2 = QtGui.QComboBox(self.groupBox)
+        self.comboBox_Model_Suffix_2.setMinimumSize(QtCore.QSize(120, 0))
+        self.comboBox_Model_Suffix_2.setEditable(True)
+        self.comboBox_Model_Suffix_2.setDuplicatesEnabled(True)
+        self.comboBox_Model_Suffix_2.setObjectName(_fromUtf8("comboBox_Model_Suffix_2"))
+        self.horizontalLayout_6.addWidget(self.comboBox_Model_Suffix_2)
+        self.verticalLayout.addLayout(self.horizontalLayout_6)
         self.horizontalLayout_5 = QtGui.QHBoxLayout()
         self.horizontalLayout_5.setObjectName(_fromUtf8("horizontalLayout_5"))
         self.label_7 = QtGui.QLabel(self.groupBox)
@@ -90,6 +92,17 @@ class Ui_FormProduct(object):
         self.doubleSpinBox_Price.setObjectName(_fromUtf8("doubleSpinBox_Price"))
         self.horizontalLayout_5.addWidget(self.doubleSpinBox_Price)
         self.verticalLayout.addLayout(self.horizontalLayout_5)
+        self.horizontalLayout = QtGui.QHBoxLayout()
+        self.horizontalLayout.setObjectName(_fromUtf8("horizontalLayout"))
+        self.label_8 = QtGui.QLabel(self.groupBox)
+        self.label_8.setMinimumSize(QtCore.QSize(80, 0))
+        self.label_8.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_8.setObjectName(_fromUtf8("label_8"))
+        self.horizontalLayout.addWidget(self.label_8)
+        self.lineEdit = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit.setObjectName(_fromUtf8("lineEdit"))
+        self.horizontalLayout.addWidget(self.lineEdit)
+        self.verticalLayout.addLayout(self.horizontalLayout)
         self.verticalLayout_2.addWidget(self.groupBox)
         self.horizontalLayout_4 = QtGui.QHBoxLayout()
         self.horizontalLayout_4.setObjectName(_fromUtf8("horizontalLayout_4"))
@@ -112,10 +125,11 @@ class Ui_FormProduct(object):
     def retranslateUi(self, FormProduct):
         FormProduct.setWindowTitle(_translate("FormProduct", "FormProduct", None))
         self.groupBox.setTitle(_translate("FormProduct", "产品信息：", None))
-        self.label_9.setText(_translate("FormProduct", "产品编号：", None))
         self.label_5.setText(_translate("FormProduct", "主型号：", None))
         self.label_4.setText(_translate("FormProduct", "副型号：", None))
+        self.label_6.setText(_translate("FormProduct", "扩展型号：", None))
         self.label_7.setText(_translate("FormProduct", "单 价：", None))
+        self.label_8.setText(_translate("FormProduct", "备 注：", None))
         self.pushButton_Cancel.setText(_translate("FormProduct", "取 消 (&C)", None))
         self.pushButton_Save.setText(_translate("FormProduct", "保 存 (&S)", None))
 
