@@ -137,7 +137,8 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         elif self._target=='ProductList':
             #self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
             dlg = FormProduct()
-        dlg.exec_()
+        ret = dlg.exec_()
+        print 'Ret:',ret
     
     def do_Next10Page(self):
         pass
