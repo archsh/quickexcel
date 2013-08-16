@@ -85,7 +85,12 @@ class QuickTableModel(QtCore.QAbstractTableModel):
         return QModelIndex()
   
     def refresh(self):
+        self.beginResetModel()
         self.query_data = self._query_data()
+        self.endResetModel()
+        #self.emit(QtCore.SIGNAL('dataChanged(const QModelIndex &, '
+        #      'const QModelIndex &)'), None, None)
+        #self.emit(QtCore.SIGNAL("layoutChanged()"))
 
     def setData(self, index, value, role):
         id, value = self.insertRecord(str(value.toString()))
@@ -93,7 +98,7 @@ class QuickTableModel(QtCore.QAbstractTableModel):
             data = index.internalPointer()
             data[0] = id
             data[1] = value
-            self.emit(SIGNAL('dataChanged(const QModelIndex &, '
+            self.emit(QtCore.SIGNAL('dataChanged(const QModelIndex &, '
               'const QModelIndex &)'), index, index)
             return True
         return False

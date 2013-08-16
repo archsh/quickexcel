@@ -44,7 +44,7 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         self.tableView_Records.setModel(proxyModel)
         self.tableView_Records.setSortingEnabled(True)
         self.tableView_Records.resizeColumnsToContents()
-        #self.tableView_Records.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tableView_Records.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
     
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','ReceiptList','EmployeeList','CustomerList','ProductList'):# 'DeliverySummary','ReceiptSummary',
@@ -101,6 +101,10 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         QtCore.QObject.connect(self.pushButton_NextPage, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_NextPage)
         QtCore.QObject.connect(self.pushButton_Reload, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Reload)
         QtCore.QObject.connect(self.comboBox_NumPerPage, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.do_Change_NumPerPage)
+        QtCore.QObject.connect(self.tableView_Records, QtCore.SIGNAL(_fromUtf8("selectRow(int)")), self.do_SelectRow)
+    
+    def do_SelectRow(self,row):
+        print 'do_SelectRow:', row
         
     def do_Delete(self):
         pass
