@@ -44,7 +44,11 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         self.tableView_Records.setModel(proxyModel)
         self.tableView_Records.setSortingEnabled(True)
         self.tableView_Records.resizeColumnsToContents()
+        #selectionModel = QtGui.QItemSelectionModel(proxyModel)
+        #self.tableView_Records.setSelectionModel(selectionModel)
+        self.tableView_Records.setSelectionMode(QtGui.QTableView.SingleSelection)
         self.tableView_Records.setSelectionBehavior(QtGui.QAbstractItemView.SelectRows)
+        self.selectionModel = self.tableView_Records.selectionModel()
     
     def __init__(self,target='DeliveryList',rootwin=None):
         if target not in ('DeliveryList','ReceiptList','EmployeeList','CustomerList','ProductList'):# 'DeliverySummary','ReceiptSummary',
@@ -101,25 +105,37 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         QtCore.QObject.connect(self.pushButton_NextPage, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_NextPage)
         QtCore.QObject.connect(self.pushButton_Reload, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Reload)
         QtCore.QObject.connect(self.comboBox_NumPerPage, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.do_Change_NumPerPage)
-        QtCore.QObject.connect(self.tableView_Records, QtCore.SIGNAL(_fromUtf8("selectRow(int)")), self.do_SelectRow)
+        #QtCore.QObject.connect(self.tableView_Records, QtCore.SIGNAL(_fromUtf8("clicked(QModelIndex)")), self.do_SelectionChanged)
+        QtCore.QObject.connect(self.selectionModel, QtCore.SIGNAL(_fromUtf8("selectionChanged(QItemSelection, QItemSelection)")), self.do_SelectionChanged)
     
-    def do_SelectRow(self,row):
-        print 'do_SelectRow:', row
+    def do_SelectionChanged(self,selected, deselected):
+        print 'Selected:',selected
+        print 'Deselected:',deselected
+        if selected:
+            self.pushButton_Modify.setEnabled(True)
+            self.pushButton_Delete.setEnabled(True)
+        else:
+            self.pushButton_Modify.setEnabled(False)
+            self.pushButton_Delete.setEnabled(False)
+    
+    def do_SelectionChanged1(self,index):
+        print 'Selected:',index
+        print 'Deselected:',index
         
     def do_Delete(self):
-        pass
+        print 'do_Delete'
         
     def do_Filter(self):
-        pass
+        print 'do_Filter'
         
     def do_Last10Page(self):
-        pass
+        print 'do_Last10Page'
     
     def do_LastPage(self):
-        pass
+        print 'do_LastPage'
     
     def do_Modify(self):
-        pass
+        print 'do_Modify'
     
     def do_New(self):
         if self._target=='DeliveryList':
@@ -147,16 +163,16 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         #print 'Ret:',ret
     
     def do_Next10Page(self):
-        pass
+        print 'do_Next10Page'
     
     def do_NextPage(self):
-        pass
+        print 'do_NextPage'
     
     def do_Reload(self):
         self._model.refresh()
     
     def do_Change_NumPerPage(self,num):
-        pass
+        print 'do_Change_NumPerPage'
     
     
 

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/TableRecords.ui'
 #
-# Created: Thu Aug 15 22:21:38 2013
+# Created: Fri Aug 16 17:24:44 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -160,6 +160,7 @@ class Ui_TableRecords(object):
         self.verticalLayout.addWidget(self.groupBox)
 
         self.retranslateUi(TableRecords)
+        QtCore.QObject.connect(self.tableView_Records, QtCore.SIGNAL(_fromUtf8("clicked(QModelIndex)")), TableRecords.repaint)
         QtCore.QMetaObject.connectSlotsByName(TableRecords)
 
     def retranslateUi(self, TableRecords):
