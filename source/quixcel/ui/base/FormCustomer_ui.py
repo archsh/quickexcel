@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'ui/FormCustomer.ui'
 #
-# Created: Thu Aug 15 22:41:00 2013
+# Created: Fri Aug 16 11:28:08 2013
 #      by: PyQt4 UI code generator 4.10
 #
 # WARNING! All changes made in this file will be lost!
@@ -131,9 +131,9 @@ class Ui_FormCustomer(object):
         self.label_5.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
         self.label_5.setObjectName(_fromUtf8("label_5"))
         self.horizontalLayout_8.addWidget(self.label_5)
-        self.lineEdit_4 = QtGui.QLineEdit(self.groupBox)
-        self.lineEdit_4.setObjectName(_fromUtf8("lineEdit_4"))
-        self.horizontalLayout_8.addWidget(self.lineEdit_4)
+        self.lineEdit_Comment = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit_Comment.setObjectName(_fromUtf8("lineEdit_Comment"))
+        self.horizontalLayout_8.addWidget(self.lineEdit_Comment)
         self.verticalLayout.addLayout(self.horizontalLayout_8)
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setSpacing(0)

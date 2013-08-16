@@ -138,7 +138,9 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
             #self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
             dlg = FormProduct()
         ret = dlg.exec_()
-        print 'Ret:',ret
+        if ret:
+            self.do_Reload()
+        #print 'Ret:',ret
     
     def do_Next10Page(self):
         pass
@@ -147,7 +149,7 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         pass
     
     def do_Reload(self):
-        pass
+        self._model.refresh()
     
     def do_Change_NumPerPage(self,num):
         pass
