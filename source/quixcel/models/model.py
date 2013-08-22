@@ -35,6 +35,18 @@ class QuickTableModel(QtCore.QAbstractTableModel):
                 return QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter
         else:
             return None
+    
+    def get(self,index,*fields):
+        if not index.isValid():
+            return None
+        else:
+            obj = self.query_data[index.row()]
+            if not fields:
+                return obj
+            else:
+                for f in fields:
+                    pass
+                
 
     def flags(self, index):
         if not index.isValid():

@@ -9,6 +9,7 @@ from .FormDelivery import FormDelivery
 from .FormEmployee import FormEmployee
 from .FormProduct import FormProduct
 from .FormReceipt import FormReceipt
+from quixcel.models.base import get_db_session
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -106,24 +107,42 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         QtCore.QObject.connect(self.pushButton_Reload, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Reload)
         QtCore.QObject.connect(self.comboBox_NumPerPage, QtCore.SIGNAL(_fromUtf8("currentIndexChanged(int)")), self.do_Change_NumPerPage)
         #QtCore.QObject.connect(self.tableView_Records, QtCore.SIGNAL(_fromUtf8("clicked(QModelIndex)")), self.do_SelectionChanged)
-        QtCore.QObject.connect(self.selectionModel, QtCore.SIGNAL(_fromUtf8("selectionChanged(QItemSelection, QItemSelection)")), self.do_SelectionChanged)
+        #QtCore.QObject.connect(self.selectionModel, QtCore.SIGNAL(_fromUtf8("selectionChanged(QItemSelection, QItemSelection)")), self.do_SelectionChanged)
+        #QtCore.QObject.connect(self.selectionModel, QtCore.SIGNAL(_fromUtf8("currentRowChanged(QItemSelection, QItemSelection)")), self.do_SelectionChanged)
+        self.tableView_Records.selectionModel().currentRowChanged.connect(self.do_SelectionChanged)
+
+        
     
-    def do_SelectionChanged(self,selected, deselected):
-        print 'Selected:',selected
-        print 'Deselected:',deselected
-        if selected:
+    def do_SelectionChanged(self,selectedIndex, deselectedIndex):
+        print 'Selected:',selectedIndex
+        print 'Deselected:',deselectedIndex
+        if selectedIndex:
             self.pushButton_Modify.setEnabled(True)
             self.pushButton_Delete.setEnabled(True)
         else:
             self.pushButton_Modify.setEnabled(False)
             self.pushButton_Delete.setEnabled(False)
-    
-    def do_SelectionChanged1(self,index):
-        print 'Selected:',index
-        print 'Deselected:',index
+        obj = self._model.get(self.tableView_Records.model().mapToSource(selectedIndex))
+        print 'Selected Object:', obj.id, obj.name
         
     def do_Delete(self):
         print 'do_Delete'
+        obj = self._model.get(self.tableView_Records.model().mapToSource(self.tableView_Records.selectedIndexes()[0]))
+        if not obj:
+            return
+        else:
+            reply = QtGui.QMessageBox.question(self, u"确定删除吗？",
+                u"确定要删除这条记录吗？",
+                QtGui.QMessageBox.Yes | QtGui.QMessageBox.Cancel)
+            if reply == QtGui.QMessageBox.Yes:
+                #self.tableView_Records.model().removeRows(self.tableView_Records.selectedIndexes()[0].row(),1)
+                #self.tableView_Records.selectedIndexes()[0]
+                get_db_session().delete(obj)
+                self._model.refresh()
+                self.pushButton_Modify.setEnabled(False)
+                self.pushButton_Delete.setEnabled(False)
+            else:
+                return
         
     def do_Filter(self):
         print 'do_Filter'
@@ -136,6 +155,31 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
     
     def do_Modify(self):
         print 'do_Modify'
+        obj = self._model.get(self.tableView_Records.model().mapToSource(self.tableView_Records.selectedIndexes()[0]))
+        if not obj:
+            return
+        if self._target=='DeliveryList':
+            #self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+            dlg = FormDelivery(obj)
+        #elif self._target=='DeliverySummary':
+        #    self._model = QuickTableModel(tabledef=Delivery,parent=self.tableView_Records)
+        elif self._target=='ReceiptList':
+            #self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+            dlg = FormReceipt(obj)
+        #elif self._target=='ReceiptSummary':
+        #    self._model = QuickTableModel(tabledef=Receipt,parent=self.tableView_Records)
+        elif self._target=='EmployeeList':
+            #self._model = QuickTableModel(tabledef=Employee,parent=self.tableView_Records)
+            dlg = FormEmployee(obj)
+        elif self._target=='CustomerList':
+            #self._model = QuickTableModel(tabledef=Customer,parent=self.tableView_Records)
+            dlg = FormCustomer(obj)
+        elif self._target=='ProductList':
+            #self._model = QuickTableModel(tabledef=Product,parent=self.tableView_Records)
+            dlg = FormProduct(obj)
+        ret = dlg.exec_()
+        if ret:
+            self.do_Reload()
     
     def do_New(self):
         if self._target=='DeliveryList':
@@ -170,6 +214,8 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
     
     def do_Reload(self):
         self._model.refresh()
+        self.pushButton_Modify.setEnabled(False)
+        self.pushButton_Delete.setEnabled(False)
     
     def do_Change_NumPerPage(self,num):
         print 'do_Change_NumPerPage'

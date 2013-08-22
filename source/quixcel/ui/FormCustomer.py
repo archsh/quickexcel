@@ -25,10 +25,18 @@ class FormCustomer(QtGui.QDialog,Ui_FormCustomer):
         self.setupUi(self)
         QtCore.QObject.connect(self.pushButton_Save, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Save)
         QtCore.QObject.connect(self.pushButton_Cancel, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Cancel)
+        if self.customer:
+            self.lineEdit_Name.setText(self.customer.name)
+            self.lineEdit_Short_name.setText(self.customer.short_name)
+            self.lineEdit_Address.setText(self.customer.address)
+            self.lineEdit_Email.setText(self.customer.email if self.customer.email else '')
+            self.lineEdit_Contact.setText(self.customer.contact)
+            self.lineEdit_Telephone.setText(self.customer.telephone)
+            self.lineEdit_Cellphone.setText(self.customer.cellphone)
+            self.lineEdit_Comment.setText(self.customer.comment if self.customer.comment else '')
     
     def do_Remove(self):
-        if self.customer:
-            pass
+        pass
     
     
     def do_Save(self):
