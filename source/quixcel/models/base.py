@@ -75,7 +75,7 @@ class Product(Base):
         self.comment = comment
 
     def __repr__(self):
-        return "<Product('%s')>" % self.name
+        return "<Product('%s')>" % self.sn
 
 
 class Delivery(Base):

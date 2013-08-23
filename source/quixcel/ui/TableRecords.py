@@ -44,7 +44,9 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         proxyModel.setSourceModel(self._model);
         self.tableView_Records.setModel(proxyModel)
         self.tableView_Records.setSortingEnabled(True)
-        self.tableView_Records.resizeColumnsToContents()
+        #self.tableView_Records.resizeColumnsToContents()
+        self.tableView_Records.setCornerButtonEnabled(False)
+        self.tableView_Records.setAlternatingRowColors(True)
         #selectionModel = QtGui.QItemSelectionModel(proxyModel)
         #self.tableView_Records.setSelectionModel(selectionModel)
         self.tableView_Records.setSelectionMode(QtGui.QTableView.SingleSelection)
@@ -111,36 +113,54 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         #QtCore.QObject.connect(self.selectionModel, QtCore.SIGNAL(_fromUtf8("currentRowChanged(QItemSelection, QItemSelection)")), self.do_SelectionChanged)
         self.tableView_Records.selectionModel().currentRowChanged.connect(self.do_SelectionChanged)
 
-        
-    
     def do_SelectionChanged(self,selectedIndex, deselectedIndex):
-        print 'Selected:',selectedIndex
-        print 'Deselected:',deselectedIndex
+        #print 'Selected:',selectedIndex
+        #print 'Deselected:',deselectedIndex
         if selectedIndex:
             self.pushButton_Modify.setEnabled(True)
             self.pushButton_Delete.setEnabled(True)
         else:
             self.pushButton_Modify.setEnabled(False)
             self.pushButton_Delete.setEnabled(False)
-        obj = self._model.get(self.tableView_Records.model().mapToSource(selectedIndex))
-        print 'Selected Object:', obj.id, obj.name
+        #obj = self._model.get(self.tableView_Records.model().mapToSource(selectedIndex))
+        #print 'Selected Object:', obj.id
         
     def do_Delete(self):
-        print 'do_Delete'
+        #print 'do_Delete'
         obj = self._model.get(self.tableView_Records.model().mapToSource(self.tableView_Records.selectedIndexes()[0]))
+        row = self.tableView_Records.selectedIndexes()[0].row()
         if not obj:
             return
         else:
             reply = QtGui.QMessageBox.question(self, u"确定删除吗？",
-                u"确定要删除这条记录吗？",
-                QtGui.QMessageBox.Yes | QtGui.QMessageBox.Cancel)
+                                               u"确定要删除这条记录吗？",
+                                               QtGui.QMessageBox.Yes | QtGui.QMessageBox.Cancel)
             if reply == QtGui.QMessageBox.Yes:
                 #self.tableView_Records.model().removeRows(self.tableView_Records.selectedIndexes()[0].row(),1)
                 #self.tableView_Records.selectedIndexes()[0]
-                get_db_session().delete(obj)
-                self._model.refresh()
-                self.pushButton_Modify.setEnabled(False)
-                self.pushButton_Delete.setEnabled(False)
+                try:
+                    get_db_session().delete(obj)
+                    get_db_session().commit()
+                except Exception,e:
+                    reply = QtGui.QMessageBox.critical(self, u"错误",
+                            u'删除记录失败！(%s)'%e,
+                            QtGui.QMessageBox.Abort | QtGui.QMessageBox.Retry | QtGui.QMessageBox.Ignore)
+                    if reply == QtGui.QMessageBox.Abort:
+                        return
+                    elif reply == QtGui.QMessageBox.Retry:
+                        self.do_Delete()
+                    else:
+                        return
+                else:
+                    self._model.refresh()
+                    if self.tableView_Records.model().rowCount()>=row+1:
+                        self.tableView_Records.selectRow(row)
+                    elif self.tableView_Records.model().rowCount()>0:
+                        print 'self.tableView_Records.model().rowCount():',self.tableView_Records.model().rowCount()
+                        self.tableView_Records.selectRow(self.tableView_Records.model().rowCount()-1)
+                    else:
+                        self.pushButton_Modify.setEnabled(False)
+                        self.pushButton_Delete.setEnabled(False)
             else:
                 return
         
@@ -216,6 +236,7 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         self._model.refresh()
         self.pushButton_Modify.setEnabled(False)
         self.pushButton_Delete.setEnabled(False)
+        self.tableView_Records.model().rowCount()
     
     def do_Change_NumPerPage(self,num):
         print 'do_Change_NumPerPage'

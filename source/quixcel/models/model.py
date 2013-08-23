@@ -77,22 +77,6 @@ class QuickTableModel(QtCore.QAbstractTableModel):
         self.endInsertRows()
         return True
 
-    def insertRecord(self, value):
-        if self.insertSQL:
-            connection, cursor = getPgCursor(self.dbInfo)
-            try:
-                try:
-                    id = getNextVal(cursor, self.sequence)
-                    sql = self.insertSQL % (id, value)
-                    cursor.execute(sql)
-                    connection.commit()
-                finally:
-                    connection.close()
-            except:
-                return (0, '')
-            return id, value
-        return (0, '')
-
     def parent(self, index):
         return QModelIndex()
   
@@ -103,25 +87,6 @@ class QuickTableModel(QtCore.QAbstractTableModel):
         #self.emit(QtCore.SIGNAL('dataChanged(const QModelIndex &, '
         #      'const QModelIndex &)'), None, None)
         #self.emit(QtCore.SIGNAL("layoutChanged()"))
-
-    def setData(self, index, value, role):
-        id, value = self.insertRecord(str(value.toString()))
-        if id:
-            data = index.internalPointer()
-            data[0] = id
-            data[1] = value
-            self.emit(QtCore.SIGNAL('dataChanged(const QModelIndex &, '
-              'const QModelIndex &)'), index, index)
-            return True
-        return False
-    
-    def setID(self, id):
-        rowCount = 0
-        for row in self.query_data:
-            if row.id == id:
-                return rowCount
-            rowCount += 1
-        return None
     
     def sort(self, Ncol, order):
         """Sort table by given column number.
