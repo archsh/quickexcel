@@ -70,33 +70,33 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         self.pushButton_NextPage.setEnabled(False)
         
         if target=='DeliveryList':
-            self.setWindowTitle(u"å‘è´§è®°å½•")
+            self.setWindowTitle(u"·¢»õ¼ÇÂ¼")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_114_list.png")))
-            self.label_Title.setText(_translate("TableRecords", "å‘è´§è®°å½•", None))
+            self.label_Title.setText(_translate("TableRecords", "·¢»õ¼ÇÂ¼", None))
         #elif target=='DeliverySummary':
-        #    self.setWindowTitle(u"å‘è´§æ±‡æ€»")
+        #    self.setWindowTitle(u"·¢»õ»ã×Ü")
         #    self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_119_table.png")))
-        #    self.label_Title.setText(_translate("TableRecords", "å‘è´§æ±‡æ€»", None))
+        #    self.label_Title.setText(_translate("TableRecords", "·¢»õ»ã×Ü", None))
         elif target=='ReceiptList':
-            self.setWindowTitle(u"æ”¶æ¬¾è®°å½•")
+            self.setWindowTitle(u"ÊÕ¿î¼ÇÂ¼")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_113_justify.png")))
-            self.label_Title.setText(_translate("TableRecords", "æ”¶æ¬¾è®°å½•", None))
+            self.label_Title.setText(_translate("TableRecords", "ÊÕ¿î¼ÇÂ¼", None))
         #elif target=='ReceiptSummary':
-        #    self.setWindowTitle(u"æ”¶æ¬¾æ±‡æ€»")
+        #    self.setWindowTitle(u"ÊÕ¿î»ã×Ü")
         #    self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_325_wallet.png")))
-        #    self.label_Title.setText(_translate("TableRecords", "æ”¶æ¬¾æ±‡æ€»", None))
+        #    self.label_Title.setText(_translate("TableRecords", "ÊÕ¿î»ã×Ü", None))
         elif target=='EmployeeList':
-            self.setWindowTitle(u"ä¸šåŠ¡å‘˜èµ„æ–™")
+            self.setWindowTitle(u"ÒµÎñÔ±×ÊÁÏ")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_043_group.png")))
-            self.label_Title.setText(_translate("TableRecords", "ä¸šåŠ¡å‘˜èµ„æ–™", None))
+            self.label_Title.setText(_translate("TableRecords", "ÒµÎñÔ±×ÊÁÏ", None))
         elif target=='CustomerList':
-            self.setWindowTitle(u"å®¢æˆ·èµ„æ–™")
+            self.setWindowTitle(u"¿Í»§×ÊÁÏ")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_024_parents.png")))
-            self.label_Title.setText(_translate("TableRecords", "å®¢æˆ·èµ„æ–™", None))
+            self.label_Title.setText(_translate("TableRecords", "¿Í»§×ÊÁÏ", None))
         elif target=='ProductList':
-            self.setWindowTitle(u"äº§å“èµ„æ–™")
+            self.setWindowTitle(u"²úÆ·×ÊÁÏ")
             self.label_Icon.setPixmap(QtGui.QPixmap(_fromUtf8(":/icons/icons/glyphicons_149_folder_new.png")))
-            self.label_Title.setText(_translate("TableRecords", "äº§å“èµ„æ–™", None))
+            self.label_Title.setText(_translate("TableRecords", "²úÆ·×ÊÁÏ", None))
         self.setupModel()
         QtCore.QObject.connect(self.pushButton_Delete, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Delete)
         QtCore.QObject.connect(self.pushButton_Filter, QtCore.SIGNAL(_fromUtf8("clicked()")), self.do_Filter)
@@ -132,8 +132,8 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
         if not obj:
             return
         else:
-            reply = QtGui.QMessageBox.question(self, u"ç¡®å®šåˆ é™¤å—ï¼Ÿ",
-                                               u"ç¡®å®šè¦åˆ é™¤è¿™æ¡è®°å½•å—ï¼Ÿ",
+            reply = QtGui.QMessageBox.question(self, u"È·¶¨É¾³ıÂğ£¿",
+                                               u"È·¶¨ÒªÉ¾³ıÕâÌõ¼ÇÂ¼Âğ£¿",
                                                QtGui.QMessageBox.Yes | QtGui.QMessageBox.Cancel)
             if reply == QtGui.QMessageBox.Yes:
                 #self.tableView_Records.model().removeRows(self.tableView_Records.selectedIndexes()[0].row(),1)
@@ -142,8 +142,8 @@ class TableRecords(QtGui.QWidget,Ui_TableRecords):
                     get_db_session().delete(obj)
                     get_db_session().commit()
                 except Exception,e:
-                    reply = QtGui.QMessageBox.critical(self, u"é”™è¯¯",
-                            u'åˆ é™¤è®°å½•å¤±è´¥ï¼(%s)'%e,
+                    reply = QtGui.QMessageBox.critical(self, u"´íÎó",
+                            u'É¾³ı¼ÇÂ¼Ê§°Ü£¡(%s)'%e,
                             QtGui.QMessageBox.Abort | QtGui.QMessageBox.Retry | QtGui.QMessageBox.Ignore)
                     if reply == QtGui.QMessageBox.Abort:
                         return
